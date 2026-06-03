@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="660" viewBox="0 0 400 660">
+<defs>
+  <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0f1923"/>
+    <stop offset="100%" stop-color="#090f18"/>
+  </linearGradient>
+  <linearGradient id="title2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1565c0"/>
+    <stop offset="100%" stop-color="#0d47a1"/>
+  </linearGradient>
+  <linearGradient id="spin2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ef4444"/>
+    <stop offset="100%" stop-color="#991b1b"/>
+  </linearGradient>
+  <linearGradient id="infobar2" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1e2d40"/>
+    <stop offset="100%" stop-color="#111927"/>
+  </linearGradient>
+</defs>
+
+<!-- Background -->
+<rect width="400" height="660" fill="url(#bg2)" rx="14"/>
+<rect x="3" y="3" width="394" height="654" fill="none" stroke="#6b7280" stroke-width="1" rx="12" opacity="0.35"/>
+
+<!-- TITLE BAR -->
+<rect x="0" y="0" width="400" height="98" fill="url(#title2)" rx="14"/>
+<rect x="0" y="85" width="400" height="13" fill="#0d47a1"/>
+
+<!-- Baseball stitch decoration left -->
+<g opacity="0.25" fill="none" stroke="white" stroke-width="1.5">
+  <ellipse cx="22" cy="18" rx="12" ry="7" transform="rotate(-30 22 18)"/>
+  <line x1="18" y1="12" x2="22" y2="14"/><line x1="20" y1="15" x2="24" y2="17"/>
+  <line x1="22" y1="19" x2="26" y2="21"/><line x1="24" y1="22" x2="28" y2="24"/>
+</g>
+<!-- Baseball stitch decoration right -->
+<g opacity="0.25" fill="none" stroke="white" stroke-width="1.5">
+  <ellipse cx="378" cy="18" rx="12" ry="7" transform="rotate(-30 378 18)"/>
+  <line x1="374" y1="12" x2="378" y2="14"/><line x1="376" y1="15" x2="380" y2="17"/>
+  <line x1="378" y1="19" x2="382" y2="21"/><line x1="380" y1="22" x2="384" y2="24"/>
+</g>
+<!-- Baseball circle left -->
+<circle cx="22" cy="50" r="16" fill="white" opacity="0.1"/>
+<circle cx="22" cy="50" r="16" fill="none" stroke="white" stroke-width="1" opacity="0.2"/>
+<!-- Baseball circle right -->
+<circle cx="378" cy="50" r="16" fill="white" opacity="0.1"/>
+<circle cx="378" cy="50" r="16" fill="none" stroke="white" stroke-width="1" opacity="0.2"/>
+
+<!-- Title text -->
+<text x="200" y="44" font-family="Arial Black,Impact,sans-serif" font-size="26" font-weight="900" fill="white" text-anchor="middle" letter-spacing="4">HOME RUN</text>
+<text x="200" y="68" font-family="Arial Black,Impact,sans-serif" font-size="22" font-weight="900" fill="#fbbf24" text-anchor="middle" letter-spacing="6">HEROES</text>
+
+<!-- LIGHT STRIP -->
+<rect x="0" y="98" width="400" height="16" fill="#0f1923"/>
+<circle cx="18" cy="106" r="5" fill="#ef4444" opacity="0.95"/>
+<circle cx="42" cy="106" r="5" fill="white" opacity="0.9"/>
+<circle cx="66" cy="106" r="5" fill="#3b82f6" opacity="0.95"/>
+<circle cx="90" cy="106" r="5" fill="#ef4444" opacity="0.95"/>
+<circle cx="114" cy="106" r="5" fill="white" opacity="0.9"/>
+<circle cx="138" cy="106" r="5" fill="#3b82f6" opacity="0.95"/>
+<circle cx="162" cy="106" r="5" fill="#ef4444" opacity="0.95"/>
+<circle cx="186" cy="106" r="5" fill="#fbbf24" opacity="0.95"/>
+<circle cx="214" cy="106" r="5" fill="#fbbf24" opacity="0.95"/>
+<circle cx="238" cy="106" r="5" fill="#ef4444" opacity="0.95"/>
+<circle cx="262" cy="106" r="5" fill="white" opacity="0.9"/>
+<circle cx="286" cy="106" r="5" fill="#3b82f6" opacity="0.95"/>
+<circle cx="310" cy="106" r="5" fill="#ef4444" opacity="0.95"/>
+<circle cx="334" cy="106" r="5" fill="white" opacity="0.9"/>
+<circle cx="358" cy="106" r="5" fill="#3b82f6" opacity="0.95"/>
+<circle cx="382" cy="106" r="5" fill="#ef4444" opacity="0.95"/>
+
+<!-- REEL AREA -->
+<rect x="5" y="114" width="390" height="240" fill="#060c14" rx="6" stroke="#1e3a5f" stroke-width="1.5"/>
+
+<!-- Subtle grass texture hint at bottom of reel area -->
+<rect x="5" y="334" width="390" height="20" fill="#0d2710" opacity="0.4" rx="0"/>
+
+<!-- Reel separators -->
+<line x1="83" y1="114" x2="83" y2="354" stroke="#1e2d40" stroke-width="2"/>
+<line x1="161" y1="114" x2="161" y2="354" stroke="#1e2d40" stroke-width="2"/>
+<line x1="239" y1="114" x2="239" y2="354" stroke="#1e2d40" stroke-width="2"/>
+<line x1="317" y1="114" x2="317" y2="354" stroke="#1e2d40" stroke-width="2"/>
+
+<!-- Row separators -->
+<line x1="5" y1="194" x2="395" y2="194" stroke="#1e2d40" stroke-width="1"/>
+<line x1="5" y1="274" x2="395" y2="274" stroke="#1e2d40" stroke-width="1"/>
+
+<!-- CENTER ROW payline glow (red) -->
+<rect x="5" y="194" width="390" height="80" fill="#ef4444" opacity="0.04"/>
+<line x1="5" y1="194" x2="395" y2="194" stroke="#ef4444" stroke-width="2" opacity="0.7"/>
+<line x1="5" y1="274" x2="395" y2="274" stroke="#ef4444" stroke-width="2" opacity="0.7"/>
+<text x="8" y="238" font-family="Arial,sans-serif" font-size="10" fill="#ef4444" opacity="0.8">◄</text>
+<text x="388" y="238" font-family="Arial,sans-serif" font-size="10" fill="#ef4444" opacity="0.8" text-anchor="end">►</text>
+
+<!-- ═══ ROW 1 (top) ═══ y=117, text y: 142/162 -->
+
+<!-- R1C1: PEANUTS (low) -->
+<rect x="8" y="117" width="72" height="74" fill="#1a1e28" rx="4"/>
+<text x="44" y="142" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="44" y="162" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">PEANUTS</text>
+
+<!-- R1C2: CAP (low) -->
+<rect x="86" y="117" width="72" height="74" fill="#1a1e28" rx="4"/>
+<text x="122" y="142" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="122" y="162" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">CAP</text>
+
+<!-- R1C3: ALL-STAR scatter -->
+<rect x="164" y="117" width="72" height="74" fill="#1a2210" rx="4" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="200" y="142" font-family="Arial,sans-serif" font-size="8" fill="#fbbf24" text-anchor="middle">◆ SCATTER</text>
+<text x="200" y="162" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#fde68a" text-anchor="middle">ALL-STAR</text>
+
+<!-- R1C4: STADIUM (high) -->
+<rect x="242" y="117" width="72" height="74" fill="#1e1408" rx="4" stroke="#fbbf24" stroke-width="1"/>
+<text x="278" y="142" font-family="Arial,sans-serif" font-size="8" fill="#f59e0b" text-anchor="middle">HIGH VALUE</text>
+<text x="278" y="162" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#fde68a" text-anchor="middle">STADIUM</text>
+
+<!-- R1C5: GLOVE (mid) -->
+<rect x="320" y="117" width="72" height="74" fill="#1a1e2e" rx="4"/>
+<text x="356" y="142" font-family="Arial,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">MID VALUE</text>
+<text x="356" y="162" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#93c5fd" text-anchor="middle">GLOVE</text>
+
+<!-- ═══ ROW 2 (center payline) ═══ y=197, text y: 222/242 -->
+
+<!-- R2C1: BAT (mid) -->
+<rect x="8" y="197" width="72" height="74" fill="#1a1e2e" rx="4" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="44" y="222" font-family="Arial,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">MID VALUE</text>
+<text x="44" y="242" font-family="Arial Black,sans-serif" font-size="12" font-weight="bold" fill="#93c5fd" text-anchor="middle">BAT</text>
+
+<!-- R2C2: WILD (Baseball crown) -->
+<rect x="86" y="197" width="72" height="74" fill="#3d0808" rx="4" stroke="#ef4444" stroke-width="2.5"/>
+<text x="122" y="222" font-family="Arial,sans-serif" font-size="8" fill="#fca5a5" text-anchor="middle">★ WILD ★</text>
+<text x="122" y="242" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="middle">BASEBALL</text>
+
+<!-- R2C3: HOME RUN (high) -->
+<rect x="164" y="197" width="72" height="74" fill="#1e1408" rx="4" stroke="#fbbf24" stroke-width="2"/>
+<text x="200" y="222" font-family="Arial,sans-serif" font-size="8" fill="#f59e0b" text-anchor="middle">HIGH VALUE</text>
+<text x="200" y="242" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#fde68a" text-anchor="middle">HOME RUN</text>
+
+<!-- R2C4: WORLD SERIES (jackpot) -->
+<rect x="242" y="197" width="72" height="74" fill="#1e1408" rx="4" stroke="#fbbf24" stroke-width="2"/>
+<text x="278" y="218" font-family="Arial,sans-serif" font-size="7" fill="#f59e0b" text-anchor="middle">JACKPOT</text>
+<text x="278" y="232" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#fde68a" text-anchor="middle">WORLD</text>
+<text x="278" y="246" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#fde68a" text-anchor="middle">SERIES</text>
+
+<!-- R2C5: BASEBALL (mid-low) -->
+<rect x="320" y="197" width="72" height="74" fill="#1a1e2e" rx="4" stroke="#3b82f6" stroke-width="1.5"/>
+<text x="356" y="222" font-family="Arial,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">MID VALUE</text>
+<text x="356" y="242" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#93c5fd" text-anchor="middle">BASEBALL</text>
+
+<!-- Center row label -->
+<text x="200" y="210" font-family="Arial,sans-serif" font-size="7" fill="#ef4444" text-anchor="middle" opacity="0.6">── MAIN PAYLINE ──</text>
+
+<!-- ═══ ROW 3 (bottom) ═══ y=277, text y: 302/322 -->
+
+<!-- R3C1: GLOVE (mid) -->
+<rect x="8" y="277" width="72" height="74" fill="#1a1e2e" rx="4"/>
+<text x="44" y="302" font-family="Arial,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">MID VALUE</text>
+<text x="44" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#93c5fd" text-anchor="middle">GLOVE</text>
+
+<!-- R3C2: BASEBALL (mid) -->
+<rect x="86" y="277" width="72" height="74" fill="#1a1e2e" rx="4"/>
+<text x="122" y="302" font-family="Arial,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">MID VALUE</text>
+<text x="122" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#93c5fd" text-anchor="middle">BASEBALL</text>
+
+<!-- R3C3: HOT DOG (low) -->
+<rect x="164" y="277" width="72" height="74" fill="#1a1e28" rx="4"/>
+<text x="200" y="302" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="200" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">HOT DOG</text>
+
+<!-- R3C4: CAP (low) -->
+<rect x="242" y="277" width="72" height="74" fill="#1a1e28" rx="4"/>
+<text x="278" y="302" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="278" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">CAP</text>
+
+<!-- R3C5: BAT (mid) -->
+<rect x="320" y="277" width="72" height="74" fill="#1a1e2e" rx="4"/>
+<text x="356" y="302" font-family="Arial,sans-serif" font-size="8" fill="#60a5fa" text-anchor="middle">MID VALUE</text>
+<text x="356" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#93c5fd" text-anchor="middle">BAT</text>
+
+<!-- PAYLINE INDICATOR BAR -->
+<rect x="5" y="356" width="390" height="16" fill="#0f1923"/>
+<text x="200" y="368" font-family="Arial,sans-serif" font-size="9" fill="#ef4444" text-anchor="middle">◄ ─── LINE 1 OF 20 ACTIVE ─── ►</text>
+
+<!-- INFO BAR -->
+<rect x="5" y="374" width="390" height="52" fill="url(#infobar2)" rx="6" stroke="#1e3a5f" stroke-width="1"/>
+
+<rect x="12" y="380" width="118" height="40" fill="#060c14" rx="4"/>
+<text x="71" y="395" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">CREDITS</text>
+<text x="71" y="413" font-family="Arial Black,sans-serif" font-size="16" fill="#fbbf24" text-anchor="middle">1,000</text>
+
+<rect x="141" y="380" width="118" height="40" fill="#060c14" rx="4"/>
+<text x="200" y="395" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">TOTAL BET</text>
+<text x="200" y="413" font-family="Arial Black,sans-serif" font-size="16" fill="white" text-anchor="middle">20</text>
+
+<rect x="270" y="380" width="118" height="40" fill="#060c14" rx="4"/>
+<text x="329" y="395" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">WIN</text>
+<text x="329" y="413" font-family="Arial Black,sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">0</text>
+
+<!-- HOLD BUTTONS LABEL -->
+<text x="200" y="442" font-family="Arial,sans-serif" font-size="8" fill="#4b5563" text-anchor="middle">HOLD / NUDGE</text>
+
+<!-- HOLD BUTTONS -->
+<rect x="9" y="446" width="70" height="26" fill="#1e2d40" rx="13" stroke="#1e3a5f" stroke-width="1"/>
+<text x="44" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="87" y="446" width="70" height="26" fill="#1e2d40" rx="13" stroke="#1e3a5f" stroke-width="1"/>
+<text x="122" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="165" y="446" width="70" height="26" fill="#1e2d40" rx="13" stroke="#1e3a5f" stroke-width="1"/>
+<text x="200" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="243" y="446" width="70" height="26" fill="#1e2d40" rx="13" stroke="#1e3a5f" stroke-width="1"/>
+<text x="278" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="321" y="446" width="70" height="26" fill="#1e2d40" rx="13" stroke="#1e3a5f" stroke-width="1"/>
+<text x="356" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<!-- MAIN CONTROLS -->
+<rect x="10" y="480" width="70" height="58" fill="#1e2d40" rx="8" stroke="#1e3a5f" stroke-width="1"/>
+<text x="45" y="503" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">BET</text>
+<text x="45" y="528" font-family="Arial Black,sans-serif" font-size="24" fill="white" text-anchor="middle">−</text>
+
+<rect x="88" y="480" width="70" height="58" fill="#060c14" rx="8" stroke="#1e3a5f" stroke-width="1"/>
+<text x="123" y="499" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">BET/LINE</text>
+<text x="123" y="526" font-family="Arial Black,sans-serif" font-size="22" fill="#fbbf24" text-anchor="middle">1</text>
+
+<rect x="166" y="480" width="70" height="58" fill="#1e2d40" rx="8" stroke="#1e3a5f" stroke-width="1"/>
+<text x="201" y="503" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">BET</text>
+<text x="201" y="528" font-family="Arial Black,sans-serif" font-size="24" fill="white" text-anchor="middle">+</text>
+
+<!-- SPIN BUTTON (red for MLB) -->
+<circle cx="322" cy="509" r="44" fill="#991b1b" opacity="0.2"/>
+<circle cx="322" cy="509" r="40" fill="url(#spin2)"/>
+<circle cx="322" cy="509" r="35" fill="none" stroke="#fca5a5" stroke-width="1" opacity="0.35"/>
+<text x="322" y="504" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="white" text-anchor="middle">SPIN</text>
+<text x="322" y="522" font-family="Arial,sans-serif" font-size="12" fill="white" text-anchor="middle">▶</text>
+
+<!-- BOTTOM BUTTONS -->
+<rect x="10" y="556" width="91" height="32" fill="#1e2d40" rx="6" stroke="#1e3a5f" stroke-width="1"/>
+<text x="55" y="570" font-family="Arial,sans-serif" font-size="9" fill="#22c55e" font-weight="bold" text-anchor="middle">LINES</text>
+<text x="55" y="582" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">20 ACTIVE</text>
+
+<rect x="107" y="556" width="91" height="32" fill="#3d0808" rx="6" stroke="#ef4444" stroke-width="1"/>
+<text x="152" y="576" font-family="Arial,sans-serif" font-size="10" fill="#ef4444" font-weight="bold" text-anchor="middle">MAX BET</text>
+
+<rect x="204" y="556" width="91" height="32" fill="#1a2210" rx="6" stroke="#fbbf24" stroke-width="1"/>
+<text x="249" y="576" font-family="Arial,sans-serif" font-size="10" fill="#fbbf24" font-weight="bold" text-anchor="middle">GAMBLE</text>
+
+<rect x="301" y="556" width="94" height="32" fill="#0c2a0c" rx="6" stroke="#22c55e" stroke-width="1"/>
+<text x="348" y="576" font-family="Arial,sans-serif" font-size="10" fill="#22c55e" font-weight="bold" text-anchor="middle">COLLECT</text>
+
+<!-- FOOTER -->
+<rect x="0" y="596" width="400" height="64" fill="#060c14"/>
+<rect x="0" y="648" width="400" height="12" fill="#060c14" rx="14"/>
+<text x="200" y="616" font-family="Arial,sans-serif" font-size="8" fill="#374151" text-anchor="middle">PLAY RESPONSIBLY · FOR ENTERTAINMENT ONLY · 18+</text>
+<text x="200" y="634" font-family="Arial,sans-serif" font-size="8" fill="#374151" text-anchor="middle">RTP 96.5% · MAX WIN 500× · NO REAL MONEY</text>
+<text x="200" y="655" font-family="Arial,sans-serif" font-size="8" fill="#374151" text-anchor="middle">THEME 2: HOME RUN HEROES — MLB</text>
+
+</svg>

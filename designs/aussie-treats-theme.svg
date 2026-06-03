@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="660" viewBox="0 0 400 660">
+<defs>
+  <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0f1d2a"/>
+    <stop offset="100%" stop-color="#080f18"/>
+  </linearGradient>
+  <linearGradient id="title3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#e91e8c"/>
+    <stop offset="100%" stop-color="#880e4f"/>
+  </linearGradient>
+  <linearGradient id="spin3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ffd600"/>
+    <stop offset="100%" stop-color="#f57f17"/>
+  </linearGradient>
+  <linearGradient id="infobar3" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1a1f2e"/>
+    <stop offset="100%" stop-color="#0f1420"/>
+  </linearGradient>
+</defs>
+
+<!-- Background -->
+<rect width="400" height="660" fill="url(#bg3)" rx="14"/>
+<rect x="3" y="3" width="394" height="654" fill="none" stroke="#6b7280" stroke-width="1" rx="12" opacity="0.35"/>
+
+<!-- TITLE BAR -->
+<rect x="0" y="0" width="400" height="98" fill="url(#title3)" rx="14"/>
+<rect x="0" y="85" width="400" height="13" fill="#880e4f"/>
+
+<!-- Candy / lolly dot decoration (left) -->
+<circle cx="15" cy="14" r="7" fill="#ffd600" opacity="0.5"/>
+<circle cx="30" cy="14" r="5" fill="#4dd0e1" opacity="0.5"/>
+<circle cx="43" cy="14" r="7" fill="#ffd600" opacity="0.5"/>
+<circle cx="58" cy="14" r="5" fill="#ff7043" opacity="0.5"/>
+<circle cx="15" cy="30" r="5" fill="#ff7043" opacity="0.5"/>
+<circle cx="30" cy="30" r="7" fill="#ffd600" opacity="0.5"/>
+<circle cx="43" cy="30" r="5" fill="#a5d6a7" opacity="0.5"/>
+<circle cx="58" cy="30" r="7" fill="#4dd0e1" opacity="0.5"/>
+
+<!-- Candy / lolly dot decoration (right) -->
+<circle cx="385" cy="14" r="7" fill="#ffd600" opacity="0.5"/>
+<circle cx="370" cy="14" r="5" fill="#4dd0e1" opacity="0.5"/>
+<circle cx="357" cy="14" r="7" fill="#ffd600" opacity="0.5"/>
+<circle cx="342" cy="14" r="5" fill="#ff7043" opacity="0.5"/>
+<circle cx="385" cy="30" r="5" fill="#ff7043" opacity="0.5"/>
+<circle cx="370" cy="30" r="7" fill="#ffd600" opacity="0.5"/>
+<circle cx="357" cy="30" r="5" fill="#a5d6a7" opacity="0.5"/>
+<circle cx="342" cy="30" r="7" fill="#4dd0e1" opacity="0.5"/>
+
+<!-- Title text -->
+<text x="200" y="44" font-family="Arial Black,Impact,sans-serif" font-size="28" font-weight="900" fill="white" text-anchor="middle" letter-spacing="4">AUSSIE BITES</text>
+<text x="200" y="70" font-family="Arial,sans-serif" font-size="13" fill="#ffd600" text-anchor="middle" letter-spacing="6">SWEET MACHINE</text>
+
+<!-- LIGHT STRIP (rainbow candy colours) -->
+<rect x="0" y="98" width="400" height="16" fill="#0f1d2a"/>
+<circle cx="18" cy="106" r="5" fill="#ff5252" opacity="0.95"/>
+<circle cx="42" cy="106" r="5" fill="#ffd600" opacity="0.95"/>
+<circle cx="66" cy="106" r="5" fill="#69f0ae" opacity="0.95"/>
+<circle cx="90" cy="106" r="5" fill="#4dd0e1" opacity="0.95"/>
+<circle cx="114" cy="106" r="5" fill="#e040fb" opacity="0.95"/>
+<circle cx="138" cy="106" r="5" fill="#ff5252" opacity="0.95"/>
+<circle cx="162" cy="106" r="5" fill="#ffd600" opacity="0.95"/>
+<circle cx="186" cy="106" r="5" fill="white" opacity="0.95"/>
+<circle cx="214" cy="106" r="5" fill="white" opacity="0.95"/>
+<circle cx="238" cy="106" r="5" fill="#ffd600" opacity="0.95"/>
+<circle cx="262" cy="106" r="5" fill="#ff5252" opacity="0.95"/>
+<circle cx="286" cy="106" r="5" fill="#e040fb" opacity="0.95"/>
+<circle cx="310" cy="106" r="5" fill="#4dd0e1" opacity="0.95"/>
+<circle cx="334" cy="106" r="5" fill="#69f0ae" opacity="0.95"/>
+<circle cx="358" cy="106" r="5" fill="#ffd600" opacity="0.95"/>
+<circle cx="382" cy="106" r="5" fill="#ff5252" opacity="0.95"/>
+
+<!-- REEL AREA -->
+<rect x="5" y="114" width="390" height="240" fill="#070d18" rx="6" stroke="#2a1540" stroke-width="1.5"/>
+
+<!-- Reel separators -->
+<line x1="83" y1="114" x2="83" y2="354" stroke="#1a1f2e" stroke-width="2"/>
+<line x1="161" y1="114" x2="161" y2="354" stroke="#1a1f2e" stroke-width="2"/>
+<line x1="239" y1="114" x2="239" y2="354" stroke="#1a1f2e" stroke-width="2"/>
+<line x1="317" y1="114" x2="317" y2="354" stroke="#1a1f2e" stroke-width="2"/>
+
+<!-- Row separators -->
+<line x1="5" y1="194" x2="395" y2="194" stroke="#1a1f2e" stroke-width="1"/>
+<line x1="5" y1="274" x2="395" y2="274" stroke="#1a1f2e" stroke-width="1"/>
+
+<!-- CENTER ROW payline glow (yellow/pink candy) -->
+<rect x="5" y="194" width="390" height="80" fill="#ffd600" opacity="0.04"/>
+<line x1="5" y1="194" x2="395" y2="194" stroke="#ffd600" stroke-width="2" opacity="0.7"/>
+<line x1="5" y1="274" x2="395" y2="274" stroke="#ffd600" stroke-width="2" opacity="0.7"/>
+<text x="8" y="238" font-family="Arial,sans-serif" font-size="10" fill="#ffd600" opacity="0.8">◄</text>
+<text x="388" y="238" font-family="Arial,sans-serif" font-size="10" fill="#ffd600" opacity="0.8" text-anchor="end">►</text>
+
+<!-- ═══ ROW 1 (top) ═══ y=117, text y: 142/162 -->
+
+<!-- R1C1: FANTALES (low) -->
+<rect x="8" y="117" width="72" height="74" fill="#1a1a28" rx="4"/>
+<text x="44" y="142" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="44" y="162" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">FANTALES</text>
+
+<!-- R1C2: SHAPES (low) -->
+<rect x="86" y="117" width="72" height="74" fill="#1a1a28" rx="4"/>
+<text x="122" y="142" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="122" y="162" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">SHAPES</text>
+
+<!-- R1C3: DAGWOOD scatter -->
+<rect x="164" y="117" width="72" height="74" fill="#2a1a08" rx="4" stroke="#ffd600" stroke-width="1.5"/>
+<text x="200" y="138" font-family="Arial,sans-serif" font-size="8" fill="#ffd600" text-anchor="middle">◆ SCATTER</text>
+<text x="200" y="152" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#ffd600" text-anchor="middle">DAGWOOD</text>
+<text x="200" y="165" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#ffd600" text-anchor="middle">DOG</text>
+
+<!-- R1C4: PADDLE POP (high) -->
+<rect x="242" y="117" width="72" height="74" fill="#1a0e28" rx="4" stroke="#e040fb" stroke-width="1"/>
+<text x="278" y="142" font-family="Arial,sans-serif" font-size="8" fill="#e040fb" text-anchor="middle">HIGH VALUE</text>
+<text x="278" y="156" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#f3a8ff" text-anchor="middle">PADDLE</text>
+<text x="278" y="169" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#f3a8ff" text-anchor="middle">POP</text>
+
+<!-- R1C5: ZOOPER DOOPER (low) -->
+<rect x="320" y="117" width="72" height="74" fill="#1a1a28" rx="4"/>
+<text x="356" y="142" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="356" y="156" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#9ca3af" text-anchor="middle">ZOOPER</text>
+<text x="356" y="169" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#9ca3af" text-anchor="middle">DOOPER</text>
+
+<!-- ═══ ROW 2 (center payline) ═══ y=197, text y: 222/242 -->
+
+<!-- R2C1: TIM TAM (mid) -->
+<rect x="8" y="197" width="72" height="74" fill="#1a1228" rx="4" stroke="#9c27b0" stroke-width="1.5"/>
+<text x="44" y="222" font-family="Arial,sans-serif" font-size="8" fill="#ce93d8" text-anchor="middle">MID VALUE</text>
+<text x="44" y="242" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#e1bee7" text-anchor="middle">TIM TAM</text>
+
+<!-- R2C2: WILD (Golden Gaytime — hero symbol!) -->
+<rect x="86" y="197" width="72" height="74" fill="#2a1f00" rx="4" stroke="#ffd600" stroke-width="3"/>
+<text x="122" y="216" font-family="Arial,sans-serif" font-size="7" fill="#ffd600" text-anchor="middle">★ WILD ★</text>
+<text x="122" y="229" font-family="Arial Black,sans-serif" font-size="9" font-weight="bold" fill="#ffd600" text-anchor="middle">GOLDEN</text>
+<text x="122" y="243" font-family="Arial Black,sans-serif" font-size="9" font-weight="bold" fill="#ffd600" text-anchor="middle">GAYTIME</text>
+
+<!-- R2C3: VIOLET CRUMBLE (high) -->
+<rect x="164" y="197" width="72" height="74" fill="#1a0e28" rx="4" stroke="#e040fb" stroke-width="2"/>
+<text x="200" y="222" font-family="Arial,sans-serif" font-size="8" fill="#e040fb" text-anchor="middle">HIGH VALUE</text>
+<text x="200" y="237" font-family="Arial Black,sans-serif" font-size="9" font-weight="bold" fill="#f3a8ff" text-anchor="middle">VIOLET</text>
+<text x="200" y="250" font-family="Arial Black,sans-serif" font-size="9" font-weight="bold" fill="#f3a8ff" text-anchor="middle">CRUMBLE</text>
+
+<!-- R2C4: PADDLE POP (high) -->
+<rect x="242" y="197" width="72" height="74" fill="#1a0e28" rx="4" stroke="#e040fb" stroke-width="2"/>
+<text x="278" y="222" font-family="Arial,sans-serif" font-size="8" fill="#e040fb" text-anchor="middle">HIGH VALUE</text>
+<text x="278" y="237" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#f3a8ff" text-anchor="middle">PADDLE</text>
+<text x="278" y="250" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#f3a8ff" text-anchor="middle">POP</text>
+
+<!-- R2C5: LAMINGTON (mid) -->
+<rect x="320" y="197" width="72" height="74" fill="#1a1228" rx="4" stroke="#9c27b0" stroke-width="1.5"/>
+<text x="356" y="222" font-family="Arial,sans-serif" font-size="8" fill="#ce93d8" text-anchor="middle">MID VALUE</text>
+<text x="356" y="242" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#e1bee7" text-anchor="middle">LAMING.</text>
+
+<!-- Center row label -->
+<text x="200" y="210" font-family="Arial,sans-serif" font-size="7" fill="#ffd600" text-anchor="middle" opacity="0.6">── MAIN PAYLINE ──</text>
+
+<!-- ═══ ROW 3 (bottom) ═══ y=277, text y: 302/322 -->
+
+<!-- R3C1: LAMINGTON (mid) -->
+<rect x="8" y="277" width="72" height="74" fill="#1a1228" rx="4"/>
+<text x="44" y="302" font-family="Arial,sans-serif" font-size="8" fill="#ce93d8" text-anchor="middle">MID VALUE</text>
+<text x="44" y="322" font-family="Arial Black,sans-serif" font-size="10" font-weight="bold" fill="#e1bee7" text-anchor="middle">LAMING.</text>
+
+<!-- R3C2: TIM TAM (mid) -->
+<rect x="86" y="277" width="72" height="74" fill="#1a1228" rx="4"/>
+<text x="122" y="302" font-family="Arial,sans-serif" font-size="8" fill="#ce93d8" text-anchor="middle">MID VALUE</text>
+<text x="122" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#e1bee7" text-anchor="middle">TIM TAM</text>
+
+<!-- R3C3: SHAPES (low) -->
+<rect x="164" y="277" width="72" height="74" fill="#1a1a28" rx="4"/>
+<text x="200" y="302" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="200" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">SHAPES</text>
+
+<!-- R3C4: FANTALES (low) -->
+<rect x="242" y="277" width="72" height="74" fill="#1a1a28" rx="4"/>
+<text x="278" y="302" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">LOW VALUE</text>
+<text x="278" y="322" font-family="Arial Black,sans-serif" font-size="11" font-weight="bold" fill="#9ca3af" text-anchor="middle">FANTALES</text>
+
+<!-- R3C5: VIOLET CRUMBLE (high) -->
+<rect x="320" y="277" width="72" height="74" fill="#1a0e28" rx="4" stroke="#e040fb" stroke-width="1"/>
+<text x="356" y="302" font-family="Arial,sans-serif" font-size="8" fill="#e040fb" text-anchor="middle">HIGH VALUE</text>
+<text x="356" y="317" font-family="Arial Black,sans-serif" font-size="9" font-weight="bold" fill="#f3a8ff" text-anchor="middle">VIOLET</text>
+<text x="356" y="330" font-family="Arial Black,sans-serif" font-size="9" font-weight="bold" fill="#f3a8ff" text-anchor="middle">CRUMBLE</text>
+
+<!-- PAYLINE INDICATOR BAR -->
+<rect x="5" y="356" width="390" height="16" fill="#0f1d2a"/>
+<text x="200" y="368" font-family="Arial,sans-serif" font-size="9" fill="#ffd600" text-anchor="middle">◄ ─── LINE 1 OF 20 ACTIVE ─── ►</text>
+
+<!-- INFO BAR -->
+<rect x="5" y="374" width="390" height="52" fill="url(#infobar3)" rx="6" stroke="#2a1540" stroke-width="1"/>
+
+<rect x="12" y="380" width="118" height="40" fill="#070d18" rx="4"/>
+<text x="71" y="395" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">CREDITS</text>
+<text x="71" y="413" font-family="Arial Black,sans-serif" font-size="16" fill="#ffd600" text-anchor="middle">1,000</text>
+
+<rect x="141" y="380" width="118" height="40" fill="#070d18" rx="4"/>
+<text x="200" y="395" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">TOTAL BET</text>
+<text x="200" y="413" font-family="Arial Black,sans-serif" font-size="16" fill="white" text-anchor="middle">20</text>
+
+<rect x="270" y="380" width="118" height="40" fill="#070d18" rx="4"/>
+<text x="329" y="395" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">WIN</text>
+<text x="329" y="413" font-family="Arial Black,sans-serif" font-size="16" fill="#22c55e" text-anchor="middle">0</text>
+
+<!-- HOLD BUTTONS LABEL -->
+<text x="200" y="442" font-family="Arial,sans-serif" font-size="8" fill="#4b5563" text-anchor="middle">HOLD / NUDGE</text>
+
+<!-- HOLD BUTTONS -->
+<rect x="9" y="446" width="70" height="26" fill="#1a1f2e" rx="13" stroke="#2a1540" stroke-width="1"/>
+<text x="44" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="87" y="446" width="70" height="26" fill="#1a1f2e" rx="13" stroke="#2a1540" stroke-width="1"/>
+<text x="122" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="165" y="446" width="70" height="26" fill="#1a1f2e" rx="13" stroke="#2a1540" stroke-width="1"/>
+<text x="200" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="243" y="446" width="70" height="26" fill="#1a1f2e" rx="13" stroke="#2a1540" stroke-width="1"/>
+<text x="278" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<rect x="321" y="446" width="70" height="26" fill="#1a1f2e" rx="13" stroke="#2a1540" stroke-width="1"/>
+<text x="356" y="463" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#6b7280" text-anchor="middle">HOLD</text>
+
+<!-- MAIN CONTROLS -->
+<rect x="10" y="480" width="70" height="58" fill="#1a1f2e" rx="8" stroke="#2a1540" stroke-width="1"/>
+<text x="45" y="503" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">BET</text>
+<text x="45" y="528" font-family="Arial Black,sans-serif" font-size="24" fill="white" text-anchor="middle">−</text>
+
+<rect x="88" y="480" width="70" height="58" fill="#070d18" rx="8" stroke="#2a1540" stroke-width="1"/>
+<text x="123" y="499" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">BET/LINE</text>
+<text x="123" y="526" font-family="Arial Black,sans-serif" font-size="22" fill="#ffd600" text-anchor="middle">1</text>
+
+<rect x="166" y="480" width="70" height="58" fill="#1a1f2e" rx="8" stroke="#2a1540" stroke-width="1"/>
+<text x="201" y="503" font-family="Arial,sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">BET</text>
+<text x="201" y="528" font-family="Arial Black,sans-serif" font-size="24" fill="white" text-anchor="middle">+</text>
+
+<!-- SPIN BUTTON (golden yellow for Aussie Treats) -->
+<circle cx="322" cy="509" r="44" fill="#f57f17" opacity="0.2"/>
+<circle cx="322" cy="509" r="40" fill="url(#spin3)"/>
+<circle cx="322" cy="509" r="35" fill="none" stroke="#fff9c4" stroke-width="1" opacity="0.4"/>
+<text x="322" y="504" font-family="Arial Black,sans-serif" font-size="15" font-weight="900" fill="#1a0f00" text-anchor="middle">SPIN</text>
+<text x="322" y="522" font-family="Arial,sans-serif" font-size="12" fill="#1a0f00" text-anchor="middle">▶</text>
+
+<!-- BOTTOM BUTTONS -->
+<rect x="10" y="556" width="91" height="32" fill="#1a1f2e" rx="6" stroke="#2a1540" stroke-width="1"/>
+<text x="55" y="570" font-family="Arial,sans-serif" font-size="9" fill="#22c55e" font-weight="bold" text-anchor="middle">LINES</text>
+<text x="55" y="582" font-family="Arial,sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">20 ACTIVE</text>
+
+<rect x="107" y="556" width="91" height="32" fill="#3d0808" rx="6" stroke="#ef4444" stroke-width="1"/>
+<text x="152" y="576" font-family="Arial,sans-serif" font-size="10" fill="#ef4444" font-weight="bold" text-anchor="middle">MAX BET</text>
+
+<rect x="204" y="556" width="91" height="32" fill="#2a1f00" rx="6" stroke="#ffd600" stroke-width="1"/>
+<text x="249" y="576" font-family="Arial,sans-serif" font-size="10" fill="#ffd600" font-weight="bold" text-anchor="middle">GAMBLE</text>
+
+<rect x="301" y="556" width="94" height="32" fill="#0c2a0c" rx="6" stroke="#22c55e" stroke-width="1"/>
+<text x="348" y="576" font-family="Arial,sans-serif" font-size="10" fill="#22c55e" font-weight="bold" text-anchor="middle">COLLECT</text>
+
+<!-- FOOTER -->
+<rect x="0" y="596" width="400" height="64" fill="#070d18"/>
+<rect x="0" y="648" width="400" height="12" fill="#070d18" rx="14"/>
+<text x="200" y="616" font-family="Arial,sans-serif" font-size="8" fill="#374151" text-anchor="middle">PLAY RESPONSIBLY · FOR ENTERTAINMENT ONLY · 18+</text>
+<text x="200" y="634" font-family="Arial,sans-serif" font-size="8" fill="#374151" text-anchor="middle">RTP 96.5% · MAX WIN 500× · NO REAL MONEY</text>
+<text x="200" y="655" font-family="Arial,sans-serif" font-size="8" fill="#374151" text-anchor="middle">THEME 3: AUSSIE BITES — SNACKS &amp; ICE CREAM</text>
+
+</svg>
