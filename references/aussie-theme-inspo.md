@@ -48,3 +48,34 @@ This style is the target for AI-generated symbol art.
 - Paddle Pop Lion is a strong Wild candidate (recognisable character)
 - Golden Gaytime works as the jackpot/high symbol
 - Still waiting on motorsport + MLB inspo from user before deciding final symbol tiers
+
+---
+
+## Feature Mechanic — CONFIRMED: More Chilli Model
+
+**Scatter / Feature Trigger symbol: ARGO CONE** (the decorated ice cream cone)
+- 3+ Argo Cones anywhere on reels triggers "CANTEEN FRENZY" free games
+- 12 free games standard, 15 with +5 option
+
+**During Canteen Frenzy, player collects ARGO CONES to escalate the feature:**
+```
+  9 Argo Cones → 3rd reel set unlocks + reel 5 fills with GOLDEN GAYTIME WILDS
+ 14 Argo Cones → 4th reel set unlocks + reels 4+5 fill with WILDS
+ 30 Argo Cones → Reels 3–5 all WILD across all reel sets (maximum)
+```
+
+**GOLDEN GAYTIME = Wild symbol**
+- Substitutes all symbols except Argo Cone scatter
+- Expands to fill entire reel when it lands during free games
+- The visual climax of the game
+
+**Free games multiplier:** 3× on all wins during Canteen Frenzy
+**Retrigger:** 3+ Argo Cones during free games = extend the feature
+
+## Argo Cone Inspo
+- Classic decorated ice cream cone
+- Chocolate ice cream scoop
+- Yellow banana lollies across the middle
+- Green, red, blue jelly beans on top
+- Pink strawberry ice cream visible below
+- Flat illustration style (same as the ice cream card inspo)
