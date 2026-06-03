@@ -177,70 +177,119 @@ This is the list that separates a real-feeling machine from a generic "spinning 
 
 ---
 
-## 5. Assets — What Costs Money
+## 5. Assets — AI-First Approach (Cheap as Possible)
 
-### The Honest Breakdown
-
-Everything below is required for a polished, publishable game. I've split it into what's free vs what costs something.
+AI tools have completely changed the cost profile for indie game art. Here's the honest picture using the tools you already have access to.
 
 ---
 
-### FREE (Zero Cost)
-| Asset | Where to Get It |
-|---|---|
-| Unity Personal license | unity.com — free for projects earning under $200k/yr |
-| Android Studio (for testing) | developer.android.com — free |
-| Google Material Icons (UI) | fonts.google.com/icons — free |
-| Freesound.org — sound effects | freesound.org — CC licensed, many free |
-| OpenGameArt.org — art assets | opengameart.org — some usable slot art |
-| Google Fonts — typography | fonts.google.com — all free |
-| ccMixter — background music | ccmixter.org — Creative Commons |
+### The Only Thing That Costs Money
 
----
-
-### COSTS MONEY — Tier 1: Essential Paid Assets
-
-These are the things you truly need to pay for to hit "Aristocrat quality":
-
-| Asset | What It Is | Estimated Cost | Notes |
-|---|---|---|---|
-| **Unity Slot Machine Kit** | Full reel system, payline engine, UI prefabs, animation rig | $30–$80 | Search "slot machine" on Unity Asset Store. Saves 3–4 weeks of build time. |
-| **Symbol Art — Theme 1** | 10–12 unique game symbols, professionally illustrated | $80–$200 | Commission on Fiverr (search "slot machine symbols") or similar |
-| **Symbol Art — Theme 2** | Same as above, MLB theme | $80–$200 | Same source, can brief the same artist for consistency |
-| **Symbol Art — Theme 3** | Same, Aussie snacks theme | $80–$200 | |
-| **UI Art Pack** | Button art, meter backgrounds, frame chrome, win animations | $20–$60 | Unity Asset Store "casino UI" packs exist |
-| **Sound Effects Pack** | Reel spin, coin win, bonus trigger, button taps | $10–$40 | Unity Asset Store or Soundsnap |
-| **Background Music** | 3 theme-appropriate looping tracks | $30–$100 | Audiojungle, Soundsnap, or commission |
-| **Google Play Developer Account** | One-time registration fee | **$25** | play.google.com/console — one account covers all your apps forever |
-
-**Tier 1 Total Estimate: $355 – $905**
-(Highly variable depending on art quality and whether you do one theme at a time)
-
----
-
-### COSTS MONEY — Tier 2: Optional Upgrades
-
-| Asset | What It Is | Cost | When You Need It |
-|---|---|---|---|
-| **Spine animation license** | Smooth 2D skeletal animation for symbols (bones-based) | $75–$300/yr | Only if you want symbols that have animated parts (e.g., car actually drives, trophy spins) |
-| **Professional audio mastering** | Make your sound pack feel cohesive/polished | $50–$150 | Pre-launch polish |
-| **App icon + splash screen art** | What people see in the Play Store | $20–$80 | Needed before submission |
-| **Video ad assets** | 15-second promo video for Play Store listing | $50–$300 | Increases download conversion significantly |
-| **Legal review (AU)** | Confirm app meets gambling-adjacent app policies | $200–$500 | Recommended before submitting — AU has specific rules around simulated gambling apps even with fake currency |
-
----
-
-### Cost Summary by Phase
-
-| Phase | What You're Buying | Budget |
+| Asset | Cost | Notes |
 |---|---|---|
-| Start (proof of concept) | Unity kit + 1 theme symbols | $110–$280 |
-| First full theme | Add sounds, music, UI pack | $175–$395 |
-| Second & third themes | Symbol art only (reuse engine) | $160–$400 |
-| Store submission | Dev account + icon/splash art | $45–$105 |
-| **Full 3-theme launch** | **Everything above** | **$490–$1,180** |
+| **Google Play Developer Account** | **$25 one-time** | The only unavoidable spend. Covers every app you ever publish on that account, forever. |
 
-> **Practical advice:** Do Theme 1 (Motorsport) first, end-to-end. Get it to a state you're proud of. Then cloning to Theme 2 and 3 is mostly an art swap — the engine is already built.
+That's it. Everything else is free or covered by AI tools you likely already use.
+
+---
+
+### Symbol Art — Use AI Image Generation
+
+This is where the old estimate ballooned to $500+. With AI it's free.
+
+**Recommended tools:**
+| Tool | Cost | Best For |
+|---|---|---|
+| **Gemini** (you mentioned this) | Free tier available | High quality, good at stylised game art |
+| **DALL-E 3** (via ChatGPT) | Free tier / $20/mo Plus | Excellent at consistent style per theme |
+| **Adobe Firefly** | Free tier | Good for transparent PNG exports (important for sprites) |
+| **Stable Diffusion** (local) | Free | Fully offline, unlimited generations, needs decent GPU |
+
+**The workflow:**
+1. Generate each symbol at 512×512 or 1024×1024 on a transparent background
+2. Prompt example: *"A golden trophy cup, slot machine symbol, flat illustration style, vibrant, transparent background, game art, casino style, isolated object"*
+3. Import PNG into Unity as a sprite
+4. Done — same result as paying an artist $150
+
+**What to generate per theme (~10 images each):**
+- Motorsport: Trophy, Race Car, Helmet, Checkered Flag, Podium, Tire, Fuel Can, Pit Stop sign, Race Track (scatter)
+- MLB: World Series Trophy, Baseball, Bat, Glove, Stadium, Hot Dog, Peanuts, Cap, All-Star (scatter)
+- Aussie Treats: Golden Gaytime, Paddle Pop, Violet Crumble, Tim Tam, Lamington, Chiko Roll, Zooper Dooper, Fantales, Shapes, Dagwood Dog (scatter)
+
+**I can write the exact AI prompts for every symbol** when you're ready to generate them.
+
+---
+
+### Sound Effects — Free AI + Free Libraries
+
+| Tool | Cost | What to Use It For |
+|---|---|---|
+| **ElevenLabs** (Sound Effects) | Free tier (100 credits/mo) | Generate custom sounds: "coin rain sound effect", "slot machine spin mechanical" |
+| **Freesound.org** | Free | CC-licensed, thousands of slot/casino sounds |
+| **Pixabay Audio** | Free | Background music loops, no attribution needed |
+| **Suno** | Free tier | Generate full theme-appropriate background tracks |
+
+**Sounds you'll need:**
+- Reel spin start + stop (mechanical whirr + click)
+- Coin cascade (win animation sound)
+- Small win jingle, big win fanfare
+- Button tap
+- Bonus trigger (dramatic sting)
+- Free spins intro music
+- Theme-specific ambient loop
+
+---
+
+### Game Engine — Free
+
+| Tool | Cost | Notes |
+|---|---|---|
+| **Unity Personal** | Free | For projects under $200k annual revenue. Covers everything you need. |
+| **Android Studio** | Free | Google's official Android dev tools, for testing builds |
+
+**Important:** Unity recently changed its pricing model. Personal is still free but verify you're on the latest terms at unity.com when you set up. The free tier is fully capable for this project.
+
+---
+
+### Unity Slot Machine Kit — Optional but Time-Saving
+
+The one optional paid item worth considering:
+
+| Option | Cost | Tradeoff |
+|---|---|---|
+| **Build the reel system yourself** | $0 | 2–3 weeks of C# coding. I can write all of this. |
+| **Unity Asset Store kit** | $30–$80 | Pre-tested reel system, saves time but adds dependency |
+
+My recommendation: **let me build it from scratch.** I can write the reel engine, payline logic, RTP system, and bonus triggers in C#. You keep full control, no licensing complications, and it's purpose-built for your exact design. The Unity Asset Store kits are often over-engineered or built for older Unity versions.
+
+---
+
+### True Cost Summary
+
+| Scenario | Cost |
+|---|---|
+| **Minimum viable launch** (1 theme, AI art, free sounds) | **$25** |
+| **Full 3-theme launch** (AI art, free sounds, free music) | **$25** |
+| **If you want to add a paid sounds pack** | $25 + $20 |
+| **If you want to buy a Unity slot kit instead of custom build** | $25 + $50 |
+
+The hard ceiling here is $100 if you want every possible optional shortcut. The floor is literally $25.
+
+---
+
+### AI Art Tips for Slot Machine Symbols
+
+A few things that matter for quality:
+
+1. **Consistent style prompt:** Add a style tag to every symbol prompt to keep them cohesive — e.g. *"…in the style of a vibrant 2D vector game icon, bold outlines, casino card game art style"*
+
+2. **Transparent backgrounds:** Always request *"isolated on transparent background, PNG"* — not all AI tools honor this but Firefly and newer DALL-E do
+
+3. **Multiple variations:** Generate 4–6 per symbol and pick the best. Free tiers give enough credits for this.
+
+4. **Upscaling:** If symbols look slightly blurry at game size, run them through a free upscaler (Topaz Gigapixel has a free trial, or use the free waifu2x online tool)
+
+5. **I can write the prompt list:** When you're ready to start generating, tell me which theme to start with and I'll give you a complete copy-paste prompt for every symbol in that theme.
 
 ---
 
