@@ -1,0 +1,549 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="660" viewBox="0 0 400 660">
+  <defs>
+    <!-- Title gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c62828"/>
+      <stop offset="100%" style="stop-color:#7f0000"/>
+    </linearGradient>
+    <!-- Spin button gradient -->
+    <radialGradient id="spinGrad" cx="40%" cy="35%">
+      <stop offset="0%" style="stop-color:#fde68a"/>
+      <stop offset="50%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#92400e"/>
+    </radialGradient>
+    <!-- Info bar gradient -->
+    <linearGradient id="infoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <!-- BET button gradient -->
+    <linearGradient id="betBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151"/>
+      <stop offset="100%" style="stop-color:#1f2937"/>
+    </linearGradient>
+    <!-- Win cell glow -->
+    <radialGradient id="winCellGlow" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Sunburst -->
+    <radialGradient id="sunburst" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Trophy gradient -->
+    <linearGradient id="trophyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde68a"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <!-- Hold button gradient -->
+    <linearGradient id="holdGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151"/>
+      <stop offset="100%" style="stop-color:#1f2937"/>
+    </linearGradient>
+    <!-- Bottom button gradients -->
+    <linearGradient id="greenBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a"/>
+      <stop offset="100%" style="stop-color:#14532d"/>
+    </linearGradient>
+    <linearGradient id="redBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#7f1d1d"/>
+    </linearGradient>
+    <linearGradient id="goldBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#92400e"/>
+    </linearGradient>
+    <!-- Win box glow -->
+    <filter id="winGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Gold glow filter -->
+    <filter id="goldGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <rect width="400" height="660" fill="#111827"/>
+
+  <!-- ==================== TITLE BAR y=0-98 ==================== -->
+  <rect x="0" y="0" width="400" height="98" fill="url(#titleGrad)" rx="14"/>
+  <rect x="0" y="85" width="400" height="13" fill="#7f0000"/>
+  <!-- Corner flag decorations -->
+  <rect x="0" y="0" width="40" height="40" fill="none"/>
+  <!-- Checkered corner TL -->
+  <rect x="4" y="4" width="8" height="8" fill="#333" opacity="0.5"/>
+  <rect x="12" y="4" width="8" height="8" fill="#fff" opacity="0.15"/>
+  <rect x="4" y="12" width="8" height="8" fill="#fff" opacity="0.15"/>
+  <rect x="12" y="12" width="8" height="8" fill="#333" opacity="0.5"/>
+  <!-- Checkered corner TR -->
+  <rect x="380" y="4" width="8" height="8" fill="#333" opacity="0.5"/>
+  <rect x="372" y="4" width="8" height="8" fill="#fff" opacity="0.15"/>
+  <rect x="380" y="12" width="8" height="8" fill="#fff" opacity="0.15"/>
+  <rect x="372" y="12" width="8" height="8" fill="#333" opacity="0.5"/>
+  <!-- Speed lines -->
+  <line x1="0" y1="55" x2="400" y2="55" stroke="#ff0000" stroke-width="0.5" opacity="0.2"/>
+  <line x1="0" y1="65" x2="400" y2="65" stroke="#ff0000" stroke-width="0.5" opacity="0.1"/>
+  <!-- Title text -->
+  <text x="200" y="50" font-family="Arial Black, Impact, sans-serif" font-size="28" font-weight="900" fill="white" text-anchor="middle" letter-spacing="5">GRAND PRIX</text>
+  <text x="200" y="72" font-family="Arial Black, Impact, sans-serif" font-size="13" fill="#fbbf24" text-anchor="middle" letter-spacing="6">S L O T S</text>
+  <!-- Racing stripe underline -->
+  <rect x="60" y="79" width="280" height="3" fill="#fbbf24" rx="1.5"/>
+  <rect x="60" y="83" width="280" height="1" fill="#ef4444" rx="0.5"/>
+
+  <!-- ==================== LIGHT STRIP y=98-114 ==================== -->
+  <rect x="0" y="98" width="400" height="16" fill="#0d1117"/>
+  <circle cx="16" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="16" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="41" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="41" cy="106" r="3" fill="#f87171"/>
+  <circle cx="66" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="66" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="91" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="91" cy="106" r="3" fill="#f87171"/>
+  <circle cx="116" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="116" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="141" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="141" cy="106" r="3" fill="#f87171"/>
+  <circle cx="166" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="166" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="191" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="191" cy="106" r="3" fill="#f87171"/>
+  <circle cx="216" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="216" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="241" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="241" cy="106" r="3" fill="#f87171"/>
+  <circle cx="266" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="266" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="291" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="291" cy="106" r="3" fill="#f87171"/>
+  <circle cx="316" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="316" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="341" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="341" cy="106" r="3" fill="#f87171"/>
+  <circle cx="366" cy="106" r="5" fill="#fbbf24"/>
+  <circle cx="366" cy="106" r="3" fill="#fde68a"/>
+  <circle cx="391" cy="106" r="5" fill="#ef4444"/>
+  <circle cx="391" cy="106" r="3" fill="#f87171"/>
+
+  <!-- ==================== REEL AREA y=114-354 ==================== -->
+  <!-- Outer frame -->
+  <rect x="5" y="114" width="390" height="240" fill="#070d18" rx="6" stroke="#2d3748" stroke-width="2"/>
+
+  <!-- WIN ROW SUNBURST (behind everything in row 2) -->
+  <ellipse cx="200" cy="234" rx="200" ry="50" fill="url(#sunburst)"/>
+  <!-- Sunburst rays -->
+  <g opacity="0.09" fill="#fbbf24">
+    <polygon points="200,234 192,114 208,114"/>
+    <polygon points="200,234 150,116 166,118"/>
+    <polygon points="200,234 104,130 118,144"/>
+    <polygon points="200,234 60,174 70,190"/>
+    <polygon points="200,234 5,210 5,230"/>
+    <polygon points="200,234 5,258 5,278"/>
+    <polygon points="200,234 60,298 68,314"/>
+    <polygon points="200,234 108,334 122,346"/>
+    <polygon points="200,234 150,352 165,354"/>
+    <polygon points="200,234 192,354 208,354"/>
+    <polygon points="200,234 235,352 250,354"/>
+    <polygon points="200,234 280,340 294,352"/>
+    <polygon points="200,234 330,308 344,320"/>
+    <polygon points="200,234 390,270 395,285"/>
+    <polygon points="200,234 390,210 395,225"/>
+    <polygon points="200,234 340,156 354,168"/>
+    <polygon points="200,234 296,122 310,136"/>
+    <polygon points="200,234 248,114 264,116"/>
+  </g>
+
+  <!-- WIN ROW GLOW BG -->
+  <rect x="5" y="194" width="390" height="80" fill="#fbbf24" opacity="0.07"/>
+
+  <!-- Reel separators vertical -->
+  <line x1="83" y1="114" x2="83" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="161" y1="114" x2="161" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="239" y1="114" x2="239" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="317" y1="114" x2="317" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <!-- Reel separators horizontal -->
+  <line x1="5" y1="194" x2="395" y2="194" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="5" y1="274" x2="395" y2="274" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- WIN ROW BORDERS -->
+  <line x1="5" y1="194" x2="395" y2="194" stroke="#fbbf24" stroke-width="2" opacity="0.9"/>
+  <line x1="5" y1="274" x2="395" y2="274" stroke="#fbbf24" stroke-width="2" opacity="0.9"/>
+  <!-- WIN row arrows -->
+  <text x="8" y="238" font-size="14" fill="#fbbf24" opacity="0.9">◄</text>
+  <text x="381" y="238" font-size="14" fill="#fbbf24" opacity="0.9">►</text>
+
+  <!-- Chrome frame overlay -->
+  <rect x="5" y="114" width="390" height="240" fill="none" stroke="#4b5563" stroke-width="1.5" rx="6"/>
+
+  <!-- ===================== ROW 1 CELLS ===================== -->
+
+  <!-- R1C1: TROPHY -->
+  <rect x="8" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(44,154)">
+    <!-- Trophy cup -->
+    <path d="M-13,-18 L-13,2 Q-13,14 0,18 Q13,14 13,2 L13,-18 Z" fill="url(#trophyGrad)"/>
+    <path d="M-8,-14 Q-5,-7 -4,-2" stroke="white" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <!-- Handles -->
+    <path d="M-13,-6 Q-22,-6 -22,2 Q-22,10 -13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <path d="M13,-6 Q22,-6 22,2 Q22,10 13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <!-- Stem -->
+    <rect x="-4" y="18" width="8" height="7" fill="#d97706"/>
+    <!-- Base -->
+    <rect x="-14" y="25" width="28" height="5" rx="2" fill="#d97706"/>
+    <!-- Star on top -->
+    <polygon points="0,-22 2,-18 6,-18 3,-15 4,-11 0,-14 -4,-11 -3,-15 -6,-18 -2,-18" fill="#fbbf24"/>
+  </g>
+  <text x="44" y="184" font-size="7" fill="#6b7280" text-anchor="middle">TROPHY</text>
+
+  <!-- R1C2: HELMET -->
+  <rect x="86" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(122,154)">
+    <ellipse cx="0" cy="-4" rx="20" ry="22" fill="#dc2626"/>
+    <path d="M-16,8 Q-16,18 0,22 Q16,18 16,8" fill="#b91c1c"/>
+    <path d="M-15,-2 Q-12,-14 0,-16 Q12,-14 15,-2 Q10,4 0,5 Q-10,4 -15,-2 Z" fill="#111"/>
+    <path d="M-10,-10 Q-5,-14 2,-15" stroke="white" stroke-width="1.5" opacity="0.5" fill="none"/>
+    <path d="M-20,2 Q-18,-8 -14,-16" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
+    <path d="M16,2 Q18,-8 14,-16" stroke="white" stroke-width="1" opacity="0.3" fill="none"/>
+  </g>
+  <text x="122" y="184" font-size="7" fill="#6b7280" text-anchor="middle">HELMET</text>
+
+  <!-- R1C3: BONUS SCATTER -->
+  <rect x="164" y="117" width="72" height="74" fill="#1a1400" rx="4" stroke="#f59e0b" stroke-width="1.5"/>
+  <g transform="translate(200,154)">
+    <!-- Track oval -->
+    <ellipse rx="22" ry="16" fill="#1a1200" stroke="#fbbf24" stroke-width="7"/>
+    <ellipse rx="14" ry="8" fill="#060c16"/>
+    <!-- Small car on track -->
+    <ellipse cx="20" cy="0" rx="3" ry="2" fill="#dc2626"/>
+    <text x="0" y="-2" font-size="8" font-weight="bold" fill="#fbbf24" text-anchor="middle">BONUS</text>
+    <text x="0" y="8" font-size="6" fill="#f59e0b" text-anchor="middle">SCATTER</text>
+  </g>
+  <text x="200" y="184" font-size="7" fill="#f59e0b" text-anchor="middle">SCATTER</text>
+
+  <!-- R1C4: TIRE -->
+  <rect x="242" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(278,154)">
+    <circle r="22" fill="#111"/>
+    <circle r="22" fill="none" stroke="#333" stroke-width="5" stroke-dasharray="6,4"/>
+    <circle r="14" fill="#555"/>
+    <line x1="0" y1="-14" x2="0" y2="14" stroke="#888" stroke-width="2"/>
+    <line x1="-14" y1="0" x2="14" y2="0" stroke="#888" stroke-width="2"/>
+    <line x1="-10" y1="-10" x2="10" y2="10" stroke="#888" stroke-width="1.5"/>
+    <line x1="10" y1="-10" x2="-10" y2="10" stroke="#888" stroke-width="1.5"/>
+    <circle r="5" fill="#999"/>
+    <circle r="2" fill="#ccc"/>
+  </g>
+  <text x="278" y="184" font-size="7" fill="#6b7280" text-anchor="middle">TIRE</text>
+
+  <!-- R1C5: PODIUM -->
+  <rect x="320" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(356,154)">
+    <!-- 2nd place left -->
+    <rect x="-28" y="-8" width="16" height="20" fill="#3b82f6" rx="2"/>
+    <text x="-20" y="6" font-size="9" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle">2</text>
+    <!-- 1st place center -->
+    <rect x="-8" y="-20" width="16" height="32" fill="#fbbf24" rx="2"/>
+    <text x="0" y="-4" font-size="9" font-family="Arial Black, sans-serif" fill="#111" text-anchor="middle">1</text>
+    <!-- 3rd place right -->
+    <rect x="12" y="0" width="16" height="12" fill="#6b7280" rx="2"/>
+    <text x="20" y="10" font-size="9" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle">3</text>
+    <!-- Base -->
+    <rect x="-28" y="12" width="56" height="5" fill="#374151" rx="2"/>
+  </g>
+  <text x="356" y="184" font-size="7" fill="#6b7280" text-anchor="middle">PODIUM</text>
+
+  <!-- ===================== ROW 2 WIN CELLS ===================== -->
+
+  <!-- R2C1: RACE CAR WIN -->
+  <rect x="8" y="197" width="72" height="74" fill="#1a1200" rx="4" stroke="#fbbf24" stroke-width="2.5"/>
+  <g transform="translate(44,234)">
+    <!-- Rear wings -->
+    <rect x="-25" y="-11" width="7" height="3" fill="#4b5563" rx="1"/>
+    <rect x="-25" y="8" width="7" height="3" fill="#4b5563" rx="1"/>
+    <!-- Car body -->
+    <ellipse rx="20" ry="8" fill="#dc2626"/>
+    <!-- Nose -->
+    <polygon points="20,-4 28,0 20,4" fill="#b91c1c"/>
+    <!-- Rear -->
+    <rect x="-25" y="-4.5" width="7" height="9" fill="#374151" rx="1"/>
+    <!-- Front wings -->
+    <rect x="14" y="-13" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <rect x="14" y="9.5" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <!-- Wheels -->
+    <ellipse cx="9" cy="-13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="9" cy="13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="-11" cy="-13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="-11" cy="13" rx="4.5" ry="5.5" fill="#111"/>
+    <!-- Wheel rims -->
+    <ellipse cx="9" cy="-13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="9" cy="13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="-11" cy="-13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-11" cy="13" rx="2.5" ry="3.5" fill="#555"/>
+    <!-- Cockpit -->
+    <ellipse cx="-2" rx="9" ry="5" fill="#111827"/>
+    <!-- Visor -->
+    <ellipse cx="-3" cy="-1" rx="5" ry="3" fill="#1d4ed8" opacity="0.7"/>
+    <!-- Speed lines -->
+    <line x1="-25" y1="-2" x2="-32" y2="-4" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    <line x1="-25" y1="2" x2="-33" y2="3" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="44" y="264" font-size="7" fill="#fbbf24" text-anchor="middle">RACE CAR</text>
+
+  <!-- R2C2: RACE CAR WIN -->
+  <rect x="86" y="197" width="72" height="74" fill="#1a1200" rx="4" stroke="#fbbf24" stroke-width="2.5"/>
+  <g transform="translate(122,234)">
+    <rect x="-25" y="-11" width="7" height="3" fill="#4b5563" rx="1"/>
+    <rect x="-25" y="8" width="7" height="3" fill="#4b5563" rx="1"/>
+    <ellipse rx="20" ry="8" fill="#dc2626"/>
+    <polygon points="20,-4 28,0 20,4" fill="#b91c1c"/>
+    <rect x="-25" y="-4.5" width="7" height="9" fill="#374151" rx="1"/>
+    <rect x="14" y="-13" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <rect x="14" y="9.5" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <ellipse cx="9" cy="-13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="9" cy="13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="-11" cy="-13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="-11" cy="13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="9" cy="-13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="9" cy="13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="-11" cy="-13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-11" cy="13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-2" rx="9" ry="5" fill="#111827"/>
+    <ellipse cx="-3" cy="-1" rx="5" ry="3" fill="#1d4ed8" opacity="0.7"/>
+    <line x1="-25" y1="-2" x2="-32" y2="-4" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    <line x1="-25" y1="2" x2="-33" y2="3" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="122" y="264" font-size="7" fill="#fbbf24" text-anchor="middle">RACE CAR</text>
+
+  <!-- R2C3: CHECKERED FLAG WILD -->
+  <rect x="164" y="197" width="72" height="74" fill="#1a1200" rx="4" stroke="#fbbf24" stroke-width="2.5"/>
+  <g transform="translate(200,234)">
+    <!-- Pole -->
+    <line x1="-13" y1="22" x2="-13" y2="-22" stroke="#9ca3af" stroke-width="2.5"/>
+    <!-- Flag bg white -->
+    <rect x="-13" y="-22" width="30" height="22" fill="white"/>
+    <!-- Checker pattern (black squares) -->
+    <rect x="-13" y="-22" width="7.5" height="5.5" fill="black"/>
+    <rect x="2" y="-22" width="7.5" height="5.5" fill="black"/>
+    <rect x="-5.5" y="-16.5" width="7.5" height="5.5" fill="black"/>
+    <rect x="9.5" y="-16.5" width="7.5" height="5.5" fill="black"/>
+    <rect x="-13" y="-11" width="7.5" height="5.5" fill="black"/>
+    <rect x="2" y="-11" width="7.5" height="5.5" fill="black"/>
+    <rect x="-5.5" y="-5.5" width="7.5" height="5.5" fill="black"/>
+    <rect x="9.5" y="-5.5" width="7.5" height="5.5" fill="black"/>
+    <!-- Flag border -->
+    <rect x="-13" y="-22" width="30" height="22" fill="none" stroke="#555" stroke-width="0.8"/>
+    <!-- WILD ribbon -->
+    <rect x="-13" y="0" width="30" height="12" fill="#dc2626" rx="1"/>
+    <text x="2" y="9" font-size="9" fill="white" font-weight="bold" text-anchor="middle">WILD</text>
+  </g>
+  <text x="200" y="264" font-size="7" fill="#fbbf24" text-anchor="middle">WILD FLAG</text>
+
+  <!-- R2C4: RACE CAR WIN -->
+  <rect x="242" y="197" width="72" height="74" fill="#1a1200" rx="4" stroke="#fbbf24" stroke-width="2.5"/>
+  <g transform="translate(278,234)">
+    <rect x="-25" y="-11" width="7" height="3" fill="#4b5563" rx="1"/>
+    <rect x="-25" y="8" width="7" height="3" fill="#4b5563" rx="1"/>
+    <ellipse rx="20" ry="8" fill="#dc2626"/>
+    <polygon points="20,-4 28,0 20,4" fill="#b91c1c"/>
+    <rect x="-25" y="-4.5" width="7" height="9" fill="#374151" rx="1"/>
+    <rect x="14" y="-13" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <rect x="14" y="9.5" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <ellipse cx="9" cy="-13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="9" cy="13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="-11" cy="-13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="-11" cy="13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="9" cy="-13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="9" cy="13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="-11" cy="-13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-11" cy="13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-2" rx="9" ry="5" fill="#111827"/>
+    <ellipse cx="-3" cy="-1" rx="5" ry="3" fill="#1d4ed8" opacity="0.7"/>
+    <line x1="-25" y1="-2" x2="-32" y2="-4" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    <line x1="-25" y1="2" x2="-33" y2="3" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="278" y="264" font-size="7" fill="#fbbf24" text-anchor="middle">RACE CAR</text>
+
+  <!-- R2C5: RACE CAR WIN -->
+  <rect x="320" y="197" width="72" height="74" fill="#1a1200" rx="4" stroke="#fbbf24" stroke-width="2.5"/>
+  <g transform="translate(356,234)">
+    <rect x="-25" y="-11" width="7" height="3" fill="#4b5563" rx="1"/>
+    <rect x="-25" y="8" width="7" height="3" fill="#4b5563" rx="1"/>
+    <ellipse rx="20" ry="8" fill="#dc2626"/>
+    <polygon points="20,-4 28,0 20,4" fill="#b91c1c"/>
+    <rect x="-25" y="-4.5" width="7" height="9" fill="#374151" rx="1"/>
+    <rect x="14" y="-13" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <rect x="14" y="9.5" width="12" height="3.5" fill="#7f1d1d" rx="1"/>
+    <ellipse cx="9" cy="-13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="9" cy="13" rx="3.5" ry="5" fill="#111"/>
+    <ellipse cx="-11" cy="-13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="-11" cy="13" rx="4.5" ry="5.5" fill="#111"/>
+    <ellipse cx="9" cy="-13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="9" cy="13" rx="2" ry="3" fill="#555"/>
+    <ellipse cx="-11" cy="-13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-11" cy="13" rx="2.5" ry="3.5" fill="#555"/>
+    <ellipse cx="-2" rx="9" ry="5" fill="#111827"/>
+    <ellipse cx="-3" cy="-1" rx="5" ry="3" fill="#1d4ed8" opacity="0.7"/>
+    <line x1="-25" y1="-2" x2="-32" y2="-4" stroke="#ef4444" stroke-width="1" opacity="0.6"/>
+    <line x1="-25" y1="2" x2="-33" y2="3" stroke="#ef4444" stroke-width="1" opacity="0.4"/>
+  </g>
+  <text x="356" y="264" font-size="7" fill="#fbbf24" text-anchor="middle">RACE CAR</text>
+
+  <!-- ===================== ROW 3 CELLS ===================== -->
+
+  <!-- R3C1: PODIUM -->
+  <rect x="8" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(44,314)">
+    <rect x="-28" y="-8" width="16" height="20" fill="#3b82f6" rx="2"/>
+    <text x="-20" y="6" font-size="9" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle">2</text>
+    <rect x="-8" y="-20" width="16" height="32" fill="#fbbf24" rx="2"/>
+    <text x="0" y="-4" font-size="9" font-family="Arial Black, sans-serif" fill="#111" text-anchor="middle">1</text>
+    <rect x="12" y="0" width="16" height="12" fill="#6b7280" rx="2"/>
+    <text x="20" y="10" font-size="9" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle">3</text>
+    <rect x="-28" y="12" width="56" height="5" fill="#374151" rx="2"/>
+  </g>
+  <text x="44" y="344" font-size="7" fill="#6b7280" text-anchor="middle">PODIUM</text>
+
+  <!-- R3C2: FUEL CAN -->
+  <rect x="86" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(122,314)">
+    <rect x="-16" y="-18" width="26" height="30" rx="3" fill="#ef4444"/>
+    <rect x="-8" y="-25" width="12" height="8" rx="2" fill="#374151"/>
+    <path d="M10,-12 Q18,-12 18,-6 Q18,0 10,0" stroke="#dc2626" stroke-width="4" fill="none"/>
+    <rect x="-14" y="-8" width="22" height="8" fill="#dc2626" opacity="0.5"/>
+    <text x="-3" y="-1" font-size="7" fill="white" text-anchor="middle">FUEL</text>
+    <!-- Fuel level window -->
+    <rect x="-6" y="4" width="10" height="5" rx="1" fill="#1d4ed8" opacity="0.7"/>
+  </g>
+  <text x="122" y="344" font-size="7" fill="#6b7280" text-anchor="middle">FUEL</text>
+
+  <!-- R3C3: HELMET -->
+  <rect x="164" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(200,314)">
+    <ellipse cx="0" cy="-4" rx="20" ry="22" fill="#dc2626"/>
+    <path d="M-16,8 Q-16,18 0,22 Q16,18 16,8" fill="#b91c1c"/>
+    <path d="M-15,-2 Q-12,-14 0,-16 Q12,-14 15,-2 Q10,4 0,5 Q-10,4 -15,-2 Z" fill="#111"/>
+    <path d="M-10,-10 Q-5,-14 2,-15" stroke="white" stroke-width="1.5" opacity="0.5" fill="none"/>
+    <path d="M-20,2 Q-18,-8 -14,-16" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
+  </g>
+  <text x="200" y="344" font-size="7" fill="#6b7280" text-anchor="middle">HELMET</text>
+
+  <!-- R3C4: FUEL -->
+  <rect x="242" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(278,314)">
+    <rect x="-16" y="-18" width="26" height="30" rx="3" fill="#ef4444"/>
+    <rect x="-8" y="-25" width="12" height="8" rx="2" fill="#374151"/>
+    <path d="M10,-12 Q18,-12 18,-6 Q18,0 10,0" stroke="#dc2626" stroke-width="4" fill="none"/>
+    <text x="-3" y="-1" font-size="7" fill="white" text-anchor="middle">FUEL</text>
+    <rect x="-6" y="4" width="10" height="5" rx="1" fill="#1d4ed8" opacity="0.7"/>
+  </g>
+  <text x="278" y="344" font-size="7" fill="#6b7280" text-anchor="middle">FUEL</text>
+
+  <!-- R3C5: TROPHY -->
+  <rect x="320" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(356,314)">
+    <path d="M-13,-18 L-13,2 Q-13,14 0,18 Q13,14 13,2 L13,-18 Z" fill="url(#trophyGrad)"/>
+    <path d="M-8,-14 Q-5,-7 -4,-2" stroke="white" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <path d="M-13,-6 Q-22,-6 -22,2 Q-22,10 -13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <path d="M13,-6 Q22,-6 22,2 Q22,10 13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <rect x="-4" y="18" width="8" height="7" fill="#d97706"/>
+    <rect x="-14" y="25" width="28" height="5" rx="2" fill="#d97706"/>
+    <polygon points="0,-22 2,-18 6,-18 3,-15 4,-11 0,-14 -4,-11 -3,-15 -6,-18 -2,-18" fill="#fbbf24"/>
+  </g>
+  <text x="356" y="344" font-size="7" fill="#6b7280" text-anchor="middle">TROPHY</text>
+
+  <!-- ==================== PAYLINE BAR y=356-370 ==================== -->
+  <rect x="5" y="356" width="390" height="14" fill="#0d1117" rx="3"/>
+  <text x="200" y="367" font-size="9" fill="#fbbf24" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="bold">◄ LINE 1: RACE CAR × 5  —  500 CREDITS ►</text>
+
+  <!-- ==================== INFO BAR y=372-425 ==================== -->
+  <rect x="5" y="372" width="390" height="53" fill="url(#infoGrad)" rx="6" stroke="#374151" stroke-width="1"/>
+
+  <!-- Credits box -->
+  <rect x="12" y="378" width="118" height="40" fill="#0f1825" rx="4" stroke="#374151" stroke-width="1"/>
+  <text x="71" y="391" font-size="8" fill="#6b7280" text-anchor="middle">CREDITS</text>
+  <text x="71" y="412" font-size="16" font-family="Arial Black, sans-serif" fill="#fbbf24" text-anchor="middle" font-weight="900">980</text>
+
+  <!-- Bet box -->
+  <rect x="141" y="378" width="118" height="40" fill="#0f1825" rx="4" stroke="#374151" stroke-width="1"/>
+  <text x="200" y="391" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+  <text x="200" y="412" font-size="16" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="900">20</text>
+
+  <!-- Win box (glowing green) -->
+  <rect x="270" y="378" width="118" height="40" fill="#0d1f0d" rx="4" stroke="#22c55e" stroke-width="2"/>
+  <text x="329" y="389" font-size="7" fill="#22c55e" text-anchor="middle">★ WIN! ★</text>
+  <text x="329" y="412" font-size="16" font-family="Arial Black, sans-serif" fill="#22c55e" text-anchor="middle" font-weight="900" filter="url(#winGlow)">500</text>
+
+  <!-- ==================== HOLD BUTTONS y=432-460 ==================== -->
+  <text x="200" y="440" font-size="8" fill="#4b5563" text-anchor="middle">HOLD / NUDGE</text>
+  <!-- 5 hold buttons -->
+  <rect x="9" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="44" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="87" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="122" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="165" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="200" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="243" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="278" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="321" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="356" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+
+  <!-- ==================== MAIN CONTROLS y=468-535 ==================== -->
+  <!-- BET- button -->
+  <rect x="10" y="468" width="70" height="58" rx="8" fill="url(#betBtnGrad)" stroke="#4b5563" stroke-width="1.5"/>
+  <text x="45" y="498" font-size="20" fill="#9ca3af" text-anchor="middle" font-weight="bold">−</text>
+  <text x="45" y="518" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+
+  <!-- BET display -->
+  <rect x="88" y="468" width="70" height="58" rx="8" fill="#070d18" stroke="#374151" stroke-width="1.5"/>
+  <text x="123" y="492" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+  <text x="123" y="516" font-size="22" font-family="Arial Black, sans-serif" fill="#fbbf24" text-anchor="middle" font-weight="900">1</text>
+
+  <!-- BET+ button -->
+  <rect x="166" y="468" width="70" height="58" rx="8" fill="url(#betBtnGrad)" stroke="#4b5563" stroke-width="1.5"/>
+  <text x="201" y="498" font-size="20" fill="#9ca3af" text-anchor="middle" font-weight="bold">+</text>
+  <text x="201" y="518" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+
+  <!-- SPIN button glow ring -->
+  <circle cx="322" cy="501" r="44" fill="#fbbf24" opacity="0.15"/>
+  <circle cx="322" cy="501" r="42" fill="#fbbf24" opacity="0.08"/>
+  <!-- SPIN button -->
+  <circle cx="322" cy="501" r="40" fill="url(#spinGrad)" stroke="#d97706" stroke-width="2"/>
+  <circle cx="322" cy="501" r="36" fill="none" stroke="#fde68a" stroke-width="0.8" opacity="0.4"/>
+  <text x="322" y="497" font-size="11" font-family="Arial Black, sans-serif" fill="#111" text-anchor="middle" font-weight="900">SPIN</text>
+  <text x="322" y="511" font-size="9" fill="#7f1d1d" text-anchor="middle">▶</text>
+
+  <!-- ==================== BOTTOM BUTTONS y=543-578 ==================== -->
+  <!-- LINES -->
+  <rect x="10" y="543" width="91" height="32" rx="6" fill="url(#greenBtnGrad)" stroke="#16a34a" stroke-width="1"/>
+  <text x="55" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">LINES</text>
+
+  <!-- MAX BET -->
+  <rect x="107" y="543" width="91" height="32" rx="6" fill="url(#redBtnGrad)" stroke="#dc2626" stroke-width="1"/>
+  <text x="152" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">MAX BET</text>
+
+  <!-- GAMBLE -->
+  <rect x="204" y="543" width="91" height="32" rx="6" fill="url(#goldBtnGrad)" stroke="#d97706" stroke-width="1"/>
+  <text x="249" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">GAMBLE</text>
+
+  <!-- COLLECT -->
+  <rect x="301" y="543" width="94" height="32" rx="6" fill="url(#greenBtnGrad)" stroke="#16a34a" stroke-width="1"/>
+  <text x="348" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">COLLECT</text>
+
+  <!-- ==================== FOOTER y=584-660 ==================== -->
+  <rect x="0" y="584" width="400" height="76" fill="#0a0e16"/>
+  <line x1="0" y1="584" x2="400" y2="584" stroke="#1f2937" stroke-width="1"/>
+  <text x="200" y="602" font-size="8" fill="#374151" text-anchor="middle">PLAY RESPONSIBLY · FOR ENTERTAINMENT ONLY · 18+</text>
+  <text x="200" y="618" font-size="8" fill="#374151" text-anchor="middle">RTP 96.5% · MAX WIN 500× · NO REAL MONEY</text>
+  <text x="200" y="636" font-size="8" fill="#4b5563" text-anchor="middle">GRAND PRIX SLOTS — DEMO MODE</text>
+  <!-- Small checkered flag icons in footer -->
+  <rect x="20" y="626" width="6" height="6" fill="#333" opacity="0.4"/>
+  <rect x="23" y="626" width="3" height="3" fill="#fff" opacity="0.2"/>
+  <rect x="20" y="629" width="3" height="3" fill="#fff" opacity="0.2"/>
+  <rect x="370" y="626" width="6" height="6" fill="#333" opacity="0.4"/>
+  <rect x="373" y="626" width="3" height="3" fill="#fff" opacity="0.2"/>
+  <rect x="370" y="629" width="3" height="3" fill="#fff" opacity="0.2"/>
+</svg>

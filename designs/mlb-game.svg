@@ -1,0 +1,494 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="660" viewBox="0 0 400 660">
+  <defs>
+    <!-- Title gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1565c0"/>
+      <stop offset="100%" style="stop-color:#0d47a1"/>
+    </linearGradient>
+    <!-- Spin button gradient -->
+    <radialGradient id="spinGrad" cx="40%" cy="35%">
+      <stop offset="0%" style="stop-color:#f87171"/>
+      <stop offset="50%" style="stop-color:#ef4444"/>
+      <stop offset="100%" style="stop-color:#7f1d1d"/>
+    </radialGradient>
+    <!-- Info bar gradient -->
+    <linearGradient id="infoGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937"/>
+      <stop offset="100%" style="stop-color:#0f1923"/>
+    </linearGradient>
+    <!-- BET button gradient -->
+    <linearGradient id="betBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151"/>
+      <stop offset="100%" style="stop-color:#1f2937"/>
+    </linearGradient>
+    <!-- Trophy gradient -->
+    <linearGradient id="trophyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde68a"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <!-- Glove gradient -->
+    <linearGradient id="gloveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a85030"/>
+      <stop offset="100%" style="stop-color:#7c3a1e"/>
+    </linearGradient>
+    <!-- Hold button gradient -->
+    <linearGradient id="holdGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151"/>
+      <stop offset="100%" style="stop-color:#1f2937"/>
+    </linearGradient>
+    <!-- Bottom button gradients -->
+    <linearGradient id="greenBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a"/>
+      <stop offset="100%" style="stop-color:#14532d"/>
+    </linearGradient>
+    <linearGradient id="redBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626"/>
+      <stop offset="100%" style="stop-color:#7f1d1d"/>
+    </linearGradient>
+    <linearGradient id="blueBtnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb"/>
+      <stop offset="100%" style="stop-color:#1e3a8a"/>
+    </linearGradient>
+    <!-- Win glow filter -->
+    <filter id="winGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Sunburst -->
+    <radialGradient id="sunburst" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#ef4444;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ==================== BACKGROUND ==================== -->
+  <rect width="400" height="660" fill="#0f1923"/>
+
+  <!-- ==================== TITLE BAR y=0-98 ==================== -->
+  <rect x="0" y="0" width="400" height="98" fill="url(#titleGrad)" rx="14"/>
+  <rect x="0" y="85" width="400" height="13" fill="#0d47a1"/>
+  <!-- Baseball diamond decorations TL -->
+  <polygon points="20,10 30,20 20,30 10,20" fill="#ef4444" opacity="0.3"/>
+  <polygon points="20,10 30,20 20,30 10,20" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <!-- Baseball diamond TR -->
+  <polygon points="380,10 390,20 380,30 370,20" fill="#ef4444" opacity="0.3"/>
+  <polygon points="380,10 390,20 380,30 370,20" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.5"/>
+  <!-- Speed/action lines -->
+  <line x1="0" y1="55" x2="400" y2="55" stroke="#3b82f6" stroke-width="0.5" opacity="0.3"/>
+  <!-- Title text -->
+  <text x="200" y="49" font-family="Arial Black, Impact, sans-serif" font-size="28" font-weight="900" fill="white" text-anchor="middle" letter-spacing="4">HOME RUN</text>
+  <text x="200" y="72" font-family="Arial Black, Impact, sans-serif" font-size="13" fill="#ef4444" text-anchor="middle" letter-spacing="6">H E R O E S</text>
+  <!-- Red/white/blue underline stripe -->
+  <rect x="60" y="79" width="280" height="3" fill="#ef4444" rx="1.5"/>
+  <rect x="60" y="83" width="280" height="1" fill="white" rx="0.5"/>
+
+  <!-- ==================== LIGHT STRIP y=98-114 ==================== -->
+  <rect x="0" y="98" width="400" height="16" fill="#0a0f15"/>
+  <!-- Red/white/blue alternating -->
+  <circle cx="16" cy="106" r="5" fill="#ef4444"/><circle cx="16" cy="106" r="3" fill="#f87171"/>
+  <circle cx="41" cy="106" r="5" fill="white"/><circle cx="41" cy="106" r="3" fill="#f1f5f9"/>
+  <circle cx="66" cy="106" r="5" fill="#3b82f6"/><circle cx="66" cy="106" r="3" fill="#60a5fa"/>
+  <circle cx="91" cy="106" r="5" fill="#ef4444"/><circle cx="91" cy="106" r="3" fill="#f87171"/>
+  <circle cx="116" cy="106" r="5" fill="white"/><circle cx="116" cy="106" r="3" fill="#f1f5f9"/>
+  <circle cx="141" cy="106" r="5" fill="#3b82f6"/><circle cx="141" cy="106" r="3" fill="#60a5fa"/>
+  <circle cx="166" cy="106" r="5" fill="#ef4444"/><circle cx="166" cy="106" r="3" fill="#f87171"/>
+  <circle cx="191" cy="106" r="5" fill="white"/><circle cx="191" cy="106" r="3" fill="#f1f5f9"/>
+  <circle cx="216" cy="106" r="5" fill="#3b82f6"/><circle cx="216" cy="106" r="3" fill="#60a5fa"/>
+  <circle cx="241" cy="106" r="5" fill="#ef4444"/><circle cx="241" cy="106" r="3" fill="#f87171"/>
+  <circle cx="266" cy="106" r="5" fill="white"/><circle cx="266" cy="106" r="3" fill="#f1f5f9"/>
+  <circle cx="291" cy="106" r="5" fill="#3b82f6"/><circle cx="291" cy="106" r="3" fill="#60a5fa"/>
+  <circle cx="316" cy="106" r="5" fill="#ef4444"/><circle cx="316" cy="106" r="3" fill="#f87171"/>
+  <circle cx="341" cy="106" r="5" fill="white"/><circle cx="341" cy="106" r="3" fill="#f1f5f9"/>
+  <circle cx="366" cy="106" r="5" fill="#3b82f6"/><circle cx="366" cy="106" r="3" fill="#60a5fa"/>
+  <circle cx="391" cy="106" r="5" fill="#ef4444"/><circle cx="391" cy="106" r="3" fill="#f87171"/>
+
+  <!-- ==================== REEL AREA ==================== -->
+  <rect x="5" y="114" width="390" height="240" fill="#070d18" rx="6" stroke="#2d3748" stroke-width="2"/>
+
+  <!-- WIN ROW SUNBURST -->
+  <ellipse cx="200" cy="234" rx="200" ry="50" fill="url(#sunburst)"/>
+  <g opacity="0.08" fill="#ef4444">
+    <polygon points="200,234 192,114 208,114"/>
+    <polygon points="200,234 150,116 166,118"/>
+    <polygon points="200,234 104,130 118,144"/>
+    <polygon points="200,234 60,174 70,190"/>
+    <polygon points="200,234 5,210 5,230"/>
+    <polygon points="200,234 5,258 5,278"/>
+    <polygon points="200,234 60,298 68,314"/>
+    <polygon points="200,234 248,114 264,116"/>
+    <polygon points="200,234 295,122 310,136"/>
+    <polygon points="200,234 340,158 355,172"/>
+    <polygon points="200,234 390,210 395,228"/>
+    <polygon points="200,234 390,258 395,274"/>
+    <polygon points="200,234 340,308 354,322"/>
+    <polygon points="200,234 280,342 294,354"/>
+  </g>
+
+  <!-- WIN ROW GLOW BG -->
+  <rect x="5" y="194" width="390" height="80" fill="#ef4444" opacity="0.06"/>
+
+  <!-- Reel separators vertical -->
+  <line x1="83" y1="114" x2="83" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="161" y1="114" x2="161" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="239" y1="114" x2="239" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="317" y1="114" x2="317" y2="354" stroke="#1f2937" stroke-width="1.5"/>
+  <!-- Reel separators horizontal -->
+  <line x1="5" y1="194" x2="395" y2="194" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="5" y1="274" x2="395" y2="274" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- WIN ROW BORDERS (red) -->
+  <line x1="5" y1="194" x2="395" y2="194" stroke="#ef4444" stroke-width="2" opacity="0.9"/>
+  <line x1="5" y1="274" x2="395" y2="274" stroke="#ef4444" stroke-width="2" opacity="0.9"/>
+  <text x="8" y="238" font-size="14" fill="#ef4444" opacity="0.9">◄</text>
+  <text x="381" y="238" font-size="14" fill="#ef4444" opacity="0.9">►</text>
+
+  <!-- Chrome frame -->
+  <rect x="5" y="114" width="390" height="240" fill="none" stroke="#4b5563" stroke-width="1.5" rx="6"/>
+
+  <!-- ===================== ROW 1 ===================== -->
+
+  <!-- R1C1: WSERIES TROPHY -->
+  <rect x="8" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(44,154)">
+    <!-- Baseball on top of trophy -->
+    <circle cx="0" cy="-26" r="8" fill="white" stroke="#e5e7eb" stroke-width="0.8"/>
+    <path d="M-4,-30 Q-6,-26 -4,-22" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <path d="M4,-30 Q6,-26 4,-22" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <!-- Trophy cup -->
+    <path d="M-13,-18 L-13,2 Q-13,14 0,18 Q13,14 13,2 L13,-18 Z" fill="url(#trophyGrad)"/>
+    <path d="M-8,-14 Q-5,-7 -4,-2" stroke="white" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <path d="M-13,-6 Q-22,-6 -22,2 Q-22,10 -13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <path d="M13,-6 Q22,-6 22,2 Q22,10 13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <rect x="-4" y="18" width="8" height="7" fill="#d97706"/>
+    <rect x="-14" y="25" width="28" height="5" rx="2" fill="#d97706"/>
+  </g>
+  <text x="44" y="184" font-size="7" fill="#6b7280" text-anchor="middle">W.SERIES</text>
+
+  <!-- R1C2: BASEBALL -->
+  <rect x="86" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(122,154)">
+    <circle r="22" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+    <!-- Stitches left curve -->
+    <path d="M-5,-20 Q-10,-12 -8,0 Q-10,12 -5,20" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+    <!-- Stitch marks left -->
+    <line x1="-7" y1="-14" x2="-3" y2="-12" stroke="#dc2626" stroke-width="1"/>
+    <line x1="-8" y1="-6" x2="-4" y2="-4" stroke="#dc2626" stroke-width="1"/>
+    <line x1="-8" y1="2" x2="-4" y2="4" stroke="#dc2626" stroke-width="1"/>
+    <line x1="-7" y1="10" x2="-3" y2="12" stroke="#dc2626" stroke-width="1"/>
+    <!-- Stitches right curve -->
+    <path d="M5,-20 Q10,-12 8,0 Q10,12 5,20" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+    <!-- Stitch marks right -->
+    <line x1="7" y1="-14" x2="3" y2="-12" stroke="#dc2626" stroke-width="1"/>
+    <line x1="8" y1="-6" x2="4" y2="-4" stroke="#dc2626" stroke-width="1"/>
+    <line x1="8" y1="2" x2="4" y2="4" stroke="#dc2626" stroke-width="1"/>
+    <line x1="7" y1="10" x2="3" y2="12" stroke="#dc2626" stroke-width="1"/>
+  </g>
+  <text x="122" y="184" font-size="7" fill="#6b7280" text-anchor="middle">BASEBALL</text>
+
+  <!-- R1C3: ALL-STAR SCATTER -->
+  <rect x="164" y="117" width="72" height="74" fill="#1a1100" rx="4" stroke="#f59e0b" stroke-width="1.5"/>
+  <g transform="translate(200,154)">
+    <!-- 5-pointed star outer -->
+    <polygon points="0,-22 5.2,-8 20,-8 8.6,1 13.6,15 0,7 -13.6,15 -8.6,1 -20,-8 -5.2,-8" fill="#fbbf24"/>
+    <!-- 5-pointed star inner highlight -->
+    <polygon points="0,-16 3.8,-6 14,-6 6,1 9.8,11 0,5 -9.8,11 -6,1 -14,-6 -3.8,-6" fill="#fde68a" opacity="0.7"/>
+    <!-- Shine -->
+    <path d="M-4,-18 Q-2,-14 0,-10" stroke="white" stroke-width="2" opacity="0.5" fill="none"/>
+    <text x="0" y="6" font-size="6" fill="#d97706" text-anchor="middle">SCATTER</text>
+  </g>
+  <text x="200" y="184" font-size="7" fill="#f59e0b" text-anchor="middle">ALL-STAR</text>
+
+  <!-- R1C4: GLOVE -->
+  <rect x="242" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(278,154)">
+    <path d="M-18,-8 Q-20,-20 -8,-22 Q0,-24 8,-20 Q18,-16 20,-6 Q20,8 10,16 Q0,20 -10,18 Q-20,14 -18,-8 Z" fill="url(#gloveGrad)"/>
+    <path d="M-18,-8 Q-22,-14 -18,-18 Q-12,-20 -8,-14" fill="#7c3a1e"/>
+    <ellipse cx="2" cy="0" rx="12" ry="10" fill="none" stroke="#5c2a10" stroke-width="2" opacity="0.5"/>
+    <!-- Lacing marks -->
+    <line x1="-2" y1="-8" x2="2" y2="-6" stroke="#7c3a1e" stroke-width="1" opacity="0.6"/>
+    <line x1="-4" y1="-2" x2="0" y2="0" stroke="#7c3a1e" stroke-width="1" opacity="0.6"/>
+    <line x1="-2" y1="4" x2="2" y2="6" stroke="#7c3a1e" stroke-width="1" opacity="0.6"/>
+    <!-- Palm highlight -->
+    <path d="M-6,-4 Q0,2 6,-2" fill="none" stroke="#b06040" stroke-width="1.5" opacity="0.3"/>
+    <!-- Wrist lace -->
+    <rect x="-14" y="12" width="18" height="5" rx="2" fill="#6b3520" opacity="0.7"/>
+  </g>
+  <text x="278" y="184" font-size="7" fill="#6b7280" text-anchor="middle">GLOVE</text>
+
+  <!-- R1C5: CAP -->
+  <rect x="320" y="117" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(356,154)">
+    <!-- Brim -->
+    <ellipse cx="0" cy="8" rx="22" ry="6" fill="#1e3a5f"/>
+    <!-- Crown -->
+    <path d="M-16,6 Q-16,-16 0,-22 Q16,-16 16,6 Z" fill="#1e3a5f"/>
+    <!-- Crown seam -->
+    <path d="M0,-22 L0,6" stroke="#374151" stroke-width="0.8" opacity="0.5"/>
+    <!-- Button top -->
+    <circle cx="0" cy="-22" r="3" fill="#374151"/>
+    <!-- Brim edge -->
+    <path d="M-22,8 Q0,16 22,8" fill="none" stroke="#374151" stroke-width="1.5"/>
+    <!-- Team logo area -->
+    <circle cx="0" cy="-8" r="8" fill="#0d47a1"/>
+    <!-- MLB logo letters -->
+    <text x="0" y="-4" font-size="7" fill="white" text-anchor="middle" font-weight="bold">MLB</text>
+    <!-- Cap sweatband -->
+    <path d="M-16,6 Q0,10 16,6" fill="none" stroke="#152a44" stroke-width="2"/>
+  </g>
+  <text x="356" y="184" font-size="7" fill="#6b7280" text-anchor="middle">CAP</text>
+
+  <!-- ===================== ROW 2 WIN CELLS ===================== -->
+
+  <!-- R2C1: BAT WIN -->
+  <rect x="8" y="197" width="72" height="74" fill="#1a0d0d" rx="4" stroke="#ef4444" stroke-width="2.5"/>
+  <g transform="translate(44,234)">
+    <!-- Bat shape (horizontal) -->
+    <path d="M-28,-3 Q-28,-5 0,-6 Q18,-6 26,-2 L26,2 Q18,6 0,6 Q-28,5 -28,3 Z" fill="#92400e"/>
+    <!-- Barrel end rounding -->
+    <ellipse cx="26" cy="0" rx="4" ry="4" fill="#78350f"/>
+    <!-- Handle grip tape -->
+    <rect x="-28" y="-4" width="10" height="8" rx="3" fill="#111" opacity="0.6"/>
+    <!-- Grain lines -->
+    <path d="M-15,-4 Q0,-5 15,-4" stroke="#6b3a1e" stroke-width="0.8" opacity="0.5" fill="none"/>
+    <path d="M-10,-2 Q0,-3 20,-1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <path d="M-10,2 Q0,3 20,1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <!-- Knob end -->
+    <ellipse cx="-28" cy="0" rx="5" ry="5" fill="#78350f"/>
+    <!-- Wood grain highlight -->
+    <path d="M-20,-3 Q5,-4 22,-1" stroke="#d4863a" stroke-width="0.8" opacity="0.2" fill="none"/>
+  </g>
+  <text x="44" y="264" font-size="7" fill="#ef4444" text-anchor="middle">BAT</text>
+
+  <!-- R2C2: BAT WIN -->
+  <rect x="86" y="197" width="72" height="74" fill="#1a0d0d" rx="4" stroke="#ef4444" stroke-width="2.5"/>
+  <g transform="translate(122,234)">
+    <path d="M-28,-3 Q-28,-5 0,-6 Q18,-6 26,-2 L26,2 Q18,6 0,6 Q-28,5 -28,3 Z" fill="#92400e"/>
+    <ellipse cx="26" cy="0" rx="4" ry="4" fill="#78350f"/>
+    <rect x="-28" y="-4" width="10" height="8" rx="3" fill="#111" opacity="0.6"/>
+    <path d="M-15,-4 Q0,-5 15,-4" stroke="#6b3a1e" stroke-width="0.8" opacity="0.5" fill="none"/>
+    <path d="M-10,-2 Q0,-3 20,-1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <path d="M-10,2 Q0,3 20,1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <ellipse cx="-28" cy="0" rx="5" ry="5" fill="#78350f"/>
+    <path d="M-20,-3 Q5,-4 22,-1" stroke="#d4863a" stroke-width="0.8" opacity="0.2" fill="none"/>
+  </g>
+  <text x="122" y="264" font-size="7" fill="#ef4444" text-anchor="middle">BAT</text>
+
+  <!-- R2C3: BASEBALL WILD -->
+  <rect x="164" y="197" width="72" height="74" fill="#1a0d0d" rx="4" stroke="#ef4444" stroke-width="2.5"/>
+  <g transform="translate(200,234)">
+    <!-- Ball -->
+    <circle r="18" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+    <!-- Stitches -->
+    <path d="M-5,-17 Q-10,-10 -8,0 Q-10,10 -5,17" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="-7" y1="-11" x2="-3" y2="-9" stroke="#dc2626" stroke-width="1"/>
+    <line x1="-8" y1="-4" x2="-4" y2="-2" stroke="#dc2626" stroke-width="1"/>
+    <line x1="-8" y1="3" x2="-4" y2="5" stroke="#dc2626" stroke-width="1"/>
+    <line x1="-7" y1="9" x2="-3" y2="11" stroke="#dc2626" stroke-width="1"/>
+    <path d="M5,-17 Q10,-10 8,0 Q10,10 5,17" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="7" y1="-11" x2="3" y2="-9" stroke="#dc2626" stroke-width="1"/>
+    <line x1="8" y1="-4" x2="4" y2="-2" stroke="#dc2626" stroke-width="1"/>
+    <line x1="8" y1="3" x2="4" y2="5" stroke="#dc2626" stroke-width="1"/>
+    <line x1="7" y1="9" x2="3" y2="11" stroke="#dc2626" stroke-width="1"/>
+    <!-- Golden crown -->
+    <path d="M-12,-16 Q-8,-24 0,-26 Q8,-24 12,-16" fill="#fbbf24"/>
+    <circle cx="-8" cy="-18" r="2" fill="#fbbf24"/>
+    <circle cx="0" cy="-20" r="2.5" fill="#fde68a"/>
+    <circle cx="8" cy="-18" r="2" fill="#fbbf24"/>
+    <!-- WILD text -->
+    <text x="0" y="8" font-size="8" fill="#dc2626" font-weight="bold" text-anchor="middle">WILD</text>
+  </g>
+  <text x="200" y="264" font-size="7" fill="#ef4444" text-anchor="middle">WILD BALL</text>
+
+  <!-- R2C4: BAT WIN -->
+  <rect x="242" y="197" width="72" height="74" fill="#1a0d0d" rx="4" stroke="#ef4444" stroke-width="2.5"/>
+  <g transform="translate(278,234)">
+    <path d="M-28,-3 Q-28,-5 0,-6 Q18,-6 26,-2 L26,2 Q18,6 0,6 Q-28,5 -28,3 Z" fill="#92400e"/>
+    <ellipse cx="26" cy="0" rx="4" ry="4" fill="#78350f"/>
+    <rect x="-28" y="-4" width="10" height="8" rx="3" fill="#111" opacity="0.6"/>
+    <path d="M-15,-4 Q0,-5 15,-4" stroke="#6b3a1e" stroke-width="0.8" opacity="0.5" fill="none"/>
+    <path d="M-10,-2 Q0,-3 20,-1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <path d="M-10,2 Q0,3 20,1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <ellipse cx="-28" cy="0" rx="5" ry="5" fill="#78350f"/>
+  </g>
+  <text x="278" y="264" font-size="7" fill="#ef4444" text-anchor="middle">BAT</text>
+
+  <!-- R2C5: BAT WIN -->
+  <rect x="320" y="197" width="72" height="74" fill="#1a0d0d" rx="4" stroke="#ef4444" stroke-width="2.5"/>
+  <g transform="translate(356,234)">
+    <path d="M-28,-3 Q-28,-5 0,-6 Q18,-6 26,-2 L26,2 Q18,6 0,6 Q-28,5 -28,3 Z" fill="#92400e"/>
+    <ellipse cx="26" cy="0" rx="4" ry="4" fill="#78350f"/>
+    <rect x="-28" y="-4" width="10" height="8" rx="3" fill="#111" opacity="0.6"/>
+    <path d="M-15,-4 Q0,-5 15,-4" stroke="#6b3a1e" stroke-width="0.8" opacity="0.5" fill="none"/>
+    <path d="M-10,2 Q0,3 20,1" stroke="#6b3a1e" stroke-width="0.8" opacity="0.4" fill="none"/>
+    <ellipse cx="-28" cy="0" rx="5" ry="5" fill="#78350f"/>
+  </g>
+  <text x="356" y="264" font-size="7" fill="#ef4444" text-anchor="middle">BAT</text>
+
+  <!-- ===================== ROW 3 CELLS ===================== -->
+
+  <!-- R3C1: CAP -->
+  <rect x="8" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(44,314)">
+    <ellipse cx="0" cy="8" rx="22" ry="6" fill="#1e3a5f"/>
+    <path d="M-16,6 Q-16,-16 0,-22 Q16,-16 16,6 Z" fill="#1e3a5f"/>
+    <path d="M0,-22 L0,6" stroke="#374151" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="0" cy="-22" r="3" fill="#374151"/>
+    <path d="M-22,8 Q0,16 22,8" fill="none" stroke="#374151" stroke-width="1.5"/>
+    <circle cx="0" cy="-8" r="8" fill="#0d47a1"/>
+    <text x="0" y="-4" font-size="7" fill="white" text-anchor="middle" font-weight="bold">MLB</text>
+  </g>
+  <text x="44" y="344" font-size="7" fill="#6b7280" text-anchor="middle">CAP</text>
+
+  <!-- R3C2: HOTDOG -->
+  <rect x="86" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(122,314)">
+    <!-- Bun bottom -->
+    <ellipse cx="0" cy="0" rx="22" ry="12" fill="#d97706"/>
+    <!-- Bun top highlight -->
+    <path d="M-20,-4 Q-10,-16 0,-16 Q10,-16 20,-4" fill="#f59e0b"/>
+    <!-- Sausage -->
+    <ellipse cx="0" cy="0" rx="18" ry="7" fill="#c0392b"/>
+    <!-- Sausage highlight -->
+    <path d="M-15,-3 Q0,-5 15,-3" stroke="#dc4040" stroke-width="1.5" opacity="0.5" fill="none"/>
+    <!-- Sausage end caps -->
+    <ellipse cx="-18" cy="0" rx="3" ry="7" fill="#a93226"/>
+    <ellipse cx="18" cy="0" rx="3" ry="7" fill="#a93226"/>
+    <!-- Mustard zigzag -->
+    <path d="M-15,-2 Q-8,4 0,-2 Q8,4 15,-2" stroke="#fbbf24" stroke-width="2.5" fill="none"/>
+    <!-- Sesame seeds on bun -->
+    <ellipse cx="-6" cy="-10" rx="2" ry="1" fill="#d4a650" transform="rotate(-20,-6,-10)"/>
+    <ellipse cx="4" cy="-12" rx="2" ry="1" fill="#d4a650" transform="rotate(15,4,-12)"/>
+    <ellipse cx="12" cy="-10" rx="2" ry="1" fill="#d4a650" transform="rotate(-10,12,-10)"/>
+  </g>
+  <text x="122" y="344" font-size="7" fill="#6b7280" text-anchor="middle">HOT DOG</text>
+
+  <!-- R3C3: GLOVE -->
+  <rect x="164" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(200,314)">
+    <path d="M-18,-8 Q-20,-20 -8,-22 Q0,-24 8,-20 Q18,-16 20,-6 Q20,8 10,16 Q0,20 -10,18 Q-20,14 -18,-8 Z" fill="url(#gloveGrad)"/>
+    <path d="M-18,-8 Q-22,-14 -18,-18 Q-12,-20 -8,-14" fill="#7c3a1e"/>
+    <ellipse cx="2" cy="0" rx="12" ry="10" fill="none" stroke="#5c2a10" stroke-width="2" opacity="0.5"/>
+    <line x1="-2" y1="-8" x2="2" y2="-6" stroke="#7c3a1e" stroke-width="1" opacity="0.6"/>
+    <line x1="-4" y1="-2" x2="0" y2="0" stroke="#7c3a1e" stroke-width="1" opacity="0.6"/>
+    <line x1="-2" y1="4" x2="2" y2="6" stroke="#7c3a1e" stroke-width="1" opacity="0.6"/>
+  </g>
+  <text x="200" y="344" font-size="7" fill="#6b7280" text-anchor="middle">GLOVE</text>
+
+  <!-- R3C4: PEANUTS -->
+  <rect x="242" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(278,314)">
+    <!-- Shell outline -->
+    <path d="M-14,-8 Q-18,-4 -16,0 Q-14,8 -8,10 Q0,12 8,10 Q14,8 16,0 Q18,-4 14,-8 Q8,-14 0,-14 Q-8,-14 -14,-8 Z" fill="#d97706"/>
+    <!-- Middle pinch -->
+    <path d="M-4,-1 Q0,5 4,-1 Q8,-6 4,-10 Q0,-12 -4,-10 Q-8,-6 -4,-1 Z" fill="#b45309"/>
+    <!-- Texture lines -->
+    <path d="M-14,-6 Q-12,-8 -8,-10" stroke="#92400e" stroke-width="0.8" opacity="0.6" fill="none"/>
+    <path d="M-16,0 Q-14,-2 -12,-4" stroke="#92400e" stroke-width="0.8" opacity="0.6" fill="none"/>
+    <path d="M14,-6 Q12,-8 8,-10" stroke="#92400e" stroke-width="0.8" opacity="0.6" fill="none"/>
+    <path d="M16,0 Q14,-2 12,-4" stroke="#92400e" stroke-width="0.8" opacity="0.6" fill="none"/>
+    <path d="M-8,10 Q0,12 8,10" stroke="#92400e" stroke-width="0.8" opacity="0.5" fill="none"/>
+    <!-- Highlight -->
+    <path d="M-10,-10 Q-6,-12 -2,-12" stroke="#f59e0b" stroke-width="1" opacity="0.4" fill="none"/>
+    <!-- Small peanut next to it -->
+    <ellipse cx="16" cy="6" rx="6" ry="4" fill="#d97706" transform="rotate(30,16,6)"/>
+    <ellipse cx="-16" cy="6" rx="5" ry="3.5" fill="#b45309" transform="rotate(-25,-16,6)"/>
+  </g>
+  <text x="278" y="344" font-size="7" fill="#6b7280" text-anchor="middle">PEANUTS</text>
+
+  <!-- R3C5: WSERIES TROPHY -->
+  <rect x="320" y="277" width="72" height="74" fill="#0f1825" rx="4"/>
+  <g transform="translate(356,314)">
+    <circle cx="0" cy="-26" r="8" fill="white" stroke="#e5e7eb" stroke-width="0.8"/>
+    <path d="M-4,-30 Q-6,-26 -4,-22" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <path d="M4,-30 Q6,-26 4,-22" fill="none" stroke="#dc2626" stroke-width="1"/>
+    <path d="M-13,-18 L-13,2 Q-13,14 0,18 Q13,14 13,2 L13,-18 Z" fill="url(#trophyGrad)"/>
+    <path d="M-8,-14 Q-5,-7 -4,-2" stroke="white" stroke-width="1.5" opacity="0.4" fill="none"/>
+    <path d="M-13,-6 Q-22,-6 -22,2 Q-22,10 -13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <path d="M13,-6 Q22,-6 22,2 Q22,10 13,10" stroke="#fbbf24" stroke-width="3.5" fill="none"/>
+    <rect x="-4" y="18" width="8" height="7" fill="#d97706"/>
+    <rect x="-14" y="25" width="28" height="5" rx="2" fill="#d97706"/>
+  </g>
+  <text x="356" y="344" font-size="7" fill="#6b7280" text-anchor="middle">W.SERIES</text>
+
+  <!-- ==================== PAYLINE BAR ==================== -->
+  <rect x="5" y="356" width="390" height="14" fill="#0a0f15" rx="3"/>
+  <text x="200" y="367" font-size="9" fill="#ef4444" text-anchor="middle" font-family="Arial Black, sans-serif" font-weight="bold">◄ LINE 1: BAT × 5  —  350 CREDITS ►</text>
+
+  <!-- ==================== INFO BAR ==================== -->
+  <rect x="5" y="372" width="390" height="53" fill="url(#infoGrad)" rx="6" stroke="#374151" stroke-width="1"/>
+
+  <!-- Credits box -->
+  <rect x="12" y="378" width="118" height="40" fill="#0f1825" rx="4" stroke="#374151" stroke-width="1"/>
+  <text x="71" y="391" font-size="8" fill="#6b7280" text-anchor="middle">CREDITS</text>
+  <text x="71" y="412" font-size="16" font-family="Arial Black, sans-serif" fill="#ef4444" text-anchor="middle" font-weight="900">980</text>
+
+  <!-- Bet box -->
+  <rect x="141" y="378" width="118" height="40" fill="#0f1825" rx="4" stroke="#374151" stroke-width="1"/>
+  <text x="200" y="391" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+  <text x="200" y="412" font-size="16" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="900">20</text>
+
+  <!-- Win box -->
+  <rect x="270" y="378" width="118" height="40" fill="#0d1f0d" rx="4" stroke="#22c55e" stroke-width="2"/>
+  <text x="329" y="389" font-size="7" fill="#22c55e" text-anchor="middle">★ WIN! ★</text>
+  <text x="329" y="412" font-size="16" font-family="Arial Black, sans-serif" fill="#22c55e" text-anchor="middle" font-weight="900" filter="url(#winGlow)">350</text>
+
+  <!-- ==================== HOLD BUTTONS ==================== -->
+  <text x="200" y="440" font-size="8" fill="#4b5563" text-anchor="middle">HOLD / NUDGE</text>
+  <rect x="9" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="44" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="87" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="122" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="165" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="200" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="243" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="278" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+  <rect x="321" y="444" width="70" height="24" rx="12" fill="url(#holdGrad)" stroke="#4b5563" stroke-width="1"/>
+  <text x="356" y="460" font-size="9" fill="#9ca3af" text-anchor="middle" font-weight="bold">HOLD</text>
+
+  <!-- ==================== MAIN CONTROLS ==================== -->
+  <!-- BET- -->
+  <rect x="10" y="468" width="70" height="58" rx="8" fill="url(#betBtnGrad)" stroke="#4b5563" stroke-width="1.5"/>
+  <text x="45" y="498" font-size="20" fill="#9ca3af" text-anchor="middle" font-weight="bold">−</text>
+  <text x="45" y="518" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+
+  <!-- BET display -->
+  <rect x="88" y="468" width="70" height="58" rx="8" fill="#070d18" stroke="#374151" stroke-width="1.5"/>
+  <text x="123" y="492" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+  <text x="123" y="516" font-size="22" font-family="Arial Black, sans-serif" fill="#ef4444" text-anchor="middle" font-weight="900">1</text>
+
+  <!-- BET+ -->
+  <rect x="166" y="468" width="70" height="58" rx="8" fill="url(#betBtnGrad)" stroke="#4b5563" stroke-width="1.5"/>
+  <text x="201" y="498" font-size="20" fill="#9ca3af" text-anchor="middle" font-weight="bold">+</text>
+  <text x="201" y="518" font-size="8" fill="#6b7280" text-anchor="middle">BET</text>
+
+  <!-- SPIN button (red) -->
+  <circle cx="322" cy="501" r="44" fill="#ef4444" opacity="0.15"/>
+  <circle cx="322" cy="501" r="42" fill="#ef4444" opacity="0.08"/>
+  <circle cx="322" cy="501" r="40" fill="url(#spinGrad)" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="322" cy="501" r="36" fill="none" stroke="#f87171" stroke-width="0.8" opacity="0.4"/>
+  <text x="322" y="497" font-size="11" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="900">SPIN</text>
+  <text x="322" y="511" font-size="9" fill="#fca5a5" text-anchor="middle">▶</text>
+
+  <!-- ==================== BOTTOM BUTTONS ==================== -->
+  <rect x="10" y="543" width="91" height="32" rx="6" fill="url(#greenBtnGrad)" stroke="#16a34a" stroke-width="1"/>
+  <text x="55" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">LINES</text>
+
+  <rect x="107" y="543" width="91" height="32" rx="6" fill="url(#redBtnGrad)" stroke="#dc2626" stroke-width="1"/>
+  <text x="152" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">MAX BET</text>
+
+  <rect x="204" y="543" width="91" height="32" rx="6" fill="url(#blueBtnGrad)" stroke="#2563eb" stroke-width="1"/>
+  <text x="249" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">GAMBLE</text>
+
+  <rect x="301" y="543" width="94" height="32" rx="6" fill="url(#greenBtnGrad)" stroke="#16a34a" stroke-width="1"/>
+  <text x="348" y="563" font-size="10" font-family="Arial Black, sans-serif" fill="white" text-anchor="middle" font-weight="bold">COLLECT</text>
+
+  <!-- ==================== FOOTER ==================== -->
+  <rect x="0" y="584" width="400" height="76" fill="#080d12"/>
+  <line x1="0" y1="584" x2="400" y2="584" stroke="#1f2937" stroke-width="1"/>
+  <text x="200" y="602" font-size="8" fill="#374151" text-anchor="middle">PLAY RESPONSIBLY · FOR ENTERTAINMENT ONLY · 18+</text>
+  <text x="200" y="618" font-size="8" fill="#374151" text-anchor="middle">RTP 96.5% · MAX WIN 500× · NO REAL MONEY</text>
+  <text x="200" y="636" font-size="8" fill="#4b5563" text-anchor="middle">HOME RUN HEROES — DEMO MODE</text>
+  <!-- Baseball seam decoration in footer -->
+  <path d="M15,622 Q20,618 25,622" fill="none" stroke="#374151" stroke-width="1.5"/>
+  <path d="M370,622 Q375,618 380,622" fill="none" stroke="#374151" stroke-width="1.5"/>
+</svg>
