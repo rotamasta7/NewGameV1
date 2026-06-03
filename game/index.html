@@ -3,46 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Aussie Bites</title>
+  <title>Aussie Bites — Canteen Frenzy</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div id="machine">
-    <header id="topbar">
-      <h1>AUSSIE BITES</h1>
-      <p class="tagline">Fun credits only &middot; no real money</p>
-    </header>
+  <!-- Whole machine scales to fit the screen via JS transform -->
+  <div id="stage">
+    <div id="machine" class="base-mode">
 
-    <!-- Reel grid: 5 reels x 3 rows -->
-    <div id="reels" aria-label="slot reels"></div>
-
-    <!-- Win / message banner -->
-    <div id="banner">Spin to play</div>
-
-    <!-- Controls -->
-    <footer id="controls">
-      <div class="meter">
-        <span class="meter-label">CREDITS</span>
-        <span id="credits" class="meter-value">0</span>
-      </div>
-
-      <div class="bet">
-        <button id="betDown" class="chip" aria-label="decrease bet">&minus;</button>
-        <div class="meter">
-          <span class="meter-label">BET</span>
-          <span id="bet" class="meter-value">0</span>
+      <!-- ===== Top bar: logo + collect meter (meter shown in feature) ===== -->
+      <header id="topbar">
+        <div id="logo">
+          <span class="logo-aussie">AUSSIE</span>
+          <span class="logo-bites">BITES</span>
         </div>
-        <button id="betUp" class="chip" aria-label="increase bet">&plus;</button>
+        <div id="collect" aria-hidden="true">
+          <span id="collectCount">0</span>
+          <span class="collect-label">COLLECTED</span>
+          <div id="collectGoal">Collect 9 for more reels!</div>
+        </div>
+      </header>
+
+      <!-- ===== Reel area: payline numbers | reels | payline numbers ===== -->
+      <div id="reelArea">
+        <div class="line-col" id="linesLeft"></div>
+        <div id="reelWrap">
+          <div id="reels" aria-label="slot reels"></div>
+          <!-- payline + win-line overlays are drawn here -->
+          <svg id="lineOverlay" viewBox="0 0 1000 600" preserveAspectRatio="none"></svg>
+          <div id="freeBadge" aria-hidden="true">BONUS REELS IN PLAY</div>
+        </div>
+        <div class="line-col" id="linesRight"></div>
       </div>
 
-      <button id="spin">SPIN</button>
+      <!-- ===== Message banner ===== -->
+      <div id="banner">SPIN TO PLAY</div>
 
-      <div class="meter">
-        <span class="meter-label">WIN</span>
-        <span id="win" class="meter-value">0</span>
-      </div>
-    </footer>
+      <!-- ===== Button deck (More Chilli style) ===== -->
+      <footer id="deck">
+        <div class="readout">
+          <span class="readout-label">CREDIT</span>
+          <span id="credits" class="readout-value">0</span>
+        </div>
+
+        <div class="deck-controls">
+          <div class="ctrl">
+            <span class="ctrl-label">LINES</span>
+            <div class="ctrl-row">
+              <button class="step" id="linesDown" aria-label="fewer lines">−</button>
+              <span id="lines" class="ctrl-value">25</span>
+              <button class="step" id="linesUp" aria-label="more lines">+</button>
+            </div>
+          </div>
+
+          <div class="ctrl">
+            <span class="ctrl-label">BET PER LINE</span>
+            <div class="ctrl-row">
+              <button class="step" id="betDown" aria-label="lower bet">−</button>
+              <span id="betPerLine" class="ctrl-value">1</span>
+              <button class="step" id="betUp" aria-label="raise bet">+</button>
+            </div>
+          </div>
+
+          <div class="ctrl">
+            <span class="ctrl-label">TOTAL BET</span>
+            <span id="totalBet" class="ctrl-value big">25</span>
+          </div>
+
+          <div class="ctrl">
+            <span class="ctrl-label">WIN</span>
+            <span id="win" class="ctrl-value big">0</span>
+          </div>
+
+          <button id="auto" class="round-btn">
+            <span class="round-top">AUTO</span>
+            <span id="autoCount" class="round-sub">OFF</span>
+          </button>
+
+          <button id="play" class="round-btn play">
+            <span class="round-top">PLAY</span>
+          </button>
+        </div>
+      </footer>
+
+      <p class="disclaimer">Fun credits only · no real money · for entertainment</p>
+    </div>
   </div>
+
+  <!-- ===== Full-screen celebration / pick overlays ===== -->
+  <div id="overlay" class="hidden">
+    <div id="overlayCard">
+      <div id="overlayMascot">🤠</div>
+      <h2 id="overlayTitle">CANTEEN FRENZY!</h2>
+      <p id="overlaySub">12 Free Games</p>
+      <button id="overlayBtn">START</button>
+    </div>
+  </div>
+
+  <!-- big-win coin canvas -->
+  <canvas id="fx" aria-hidden="true"></canvas>
 
   <script src="js/symbols.js"></script>
   <script src="js/paylines.js"></script>
