@@ -3,79 +3,72 @@
 ## Art Style
 Flat illustration, bold clean colours, slight drop shadow on each item.
 Soft pastel background (light blue for biscuits, mint green for ice creams).
-This style is the target for AI-generated symbol art.
+This is the target look for the final cut-out symbol art.
 
-## Combined Symbol Pool (Biscuits + Ice Creams)
+## Source artwork
+Two greeting-card inspo images supplied by the user (mint card = ice creams,
+blue card = biscuits). **The binary image files are NOT stored in the repo**
+(Claude cannot write image binaries here). The user will produce transparent
+PNG cut-outs of each item below via background-removal tools (remove.bg /
+Photopea / Firefly) when art is needed. This list is the locked reference so
+both sides work off the same items.
 
-### Ice Creams (from inspo card)
-- **Paddle Pop Lion** — cowboy hat, lion face on stick (iconic, high value candidate)
-- **Golden Gaytime** — chocolate/biscuit crumb coated bar, bitten corner showing layers
-- **Lime Splice** — bright green icy pole with bite taken out
-- **Zooper Dooper** — flat white/pale ice block in plastic sleeve
-- **Swirl Calippo / Twister** — red/orange/yellow spiral on stick
-- **Tropical Paddle Pop** — multicolour pastel swirl on stick
-- **Stacked Calippo** — layered orange/green/yellow segments
-- **Soft Serve Cone** — waffle cone with classic swirl
+## Ice Cream card (mint green, 3x3) — exact items
+| # | Item | Notes |
+|---|---|---|
+| 1 | Lime Paddle Pop / green icy pole | bright green, bite taken out |
+| 2 | **Bubble O'Bill** | cowboy hat, bubblegum-nose face — iconic novelty |
+| 3 | **Golden Gaytime** | honeycomb-crumb chocolate bar, bitten corner |
+| 4 | Rainbow twist pole | red/yellow spiral on stick |
+| 5 | Soft-serve cone w/ chocolate Flake | classic Mr Whippy "99" |
+| 6 | Rainbow Paddle Pop | pastel confetti/speckled pop |
+| 7 | Choc Wedge | choc-dipped top, wafer base, yellow wrapper |
+| 8 | Rainbow rocket ice block | layered red/orange/green/purple |
+| 9 | Lemonade Icy Pole | pale blue ice block |
 
-### Biscuits (from inspo card)
-- **Scotch Finger** — plain rectangular, embossed "ARNOTT SCOTCH"
-- **Nice Biscuit** — rectangular, embossed "ARNOTT NICE", coconut dusting
-- **Tim Tam** — dark chocolate rectangle (2-layer sandwich)
-- **Tiny Teddies** — small bear-shaped, come in groups of 2-3
-- **Wagon Wheel** — large round with clock face emboss
-- **Kingston** — cream/jam filled sandwich rectangle
-- **Monte Carlo / Jam Round** — round scalloped edge with cherry jam centre
-- **Wafer** — pink/cream layered wafer biscuits
-- **Iced VoVo style** — iced top with sprinkles
+## Biscuit card (light blue, 3x3) — exact items
+| # | Item | Notes |
+|---|---|---|
+| 1 | **Iced VoVo** | pink fondant strips, raspberry jam, coconut |
+| 2 | **Tim Tam** | solid dark-chocolate rectangle |
+| 3 | **Arnott's Nice** | embossed "ARNOTT NICE", sugar-topped |
+| 4 | Jam Fancy / shortbread cream | round scalloped, red jam centre |
+| 5 | Wafers | pink + brown Arnott's wafer fingers |
+| 6 | Pink iced sprinkle biscuit | pink icing + 100s & 1000s |
+| 7 | **Tiny Teddies** | three teddy-bear biscuits |
+| 8 | Clock-face + lemon biscuit | novelty clock biscuit, yellow behind |
+| 9 | **Arnott's Scotch Finger** | embossed "ARNOTT SCOTCH" |
 
-## Symbol Tier Candidates (to decide, not final)
-| Symbol | Tier Idea |
+## Special roles (confirmed)
+- **Golden Gaytime = WILD** (expanding — fills the whole reel during free games).
+  Substitutes everything except the Argo Cone scatter.
+- **Argo the ice cream = SCATTER** (from separate image; triggers Canteen
+  Frenzy free games). Not on either card above.
+
+## Feature mechanic (confirmed — More Chilli model)
+"Canteen Frenzy" free games. 3+ Argo Cones triggers it (12 free games standard,
+15 with +5 option). Collect Argo Cones during the feature to expand reel sets:
+```
+  9 Argo Cones -> 3rd reel set + reel 5 fills with Golden Gaytime Wilds
+ 14 Argo Cones -> 4th reel set + reels 4+5 fill with Wilds
+ 30 Argo Cones -> reels 3-5 all Wilds across all reel sets (maximum)
+```
+3x multiplier on all wins. Retrigger: 3+ Argo Cones during free games.
+
+## Argo Cone art note
+Decorated cone: chocolate scoop, yellow banana lollies across the middle,
+green/red/blue jelly beans on top, pink strawberry below. Flat illustration.
+
+## Symbol tier candidates (draft — tune in Phase 4 for RTP)
+| Symbol | Role / Tier |
 |---|---|
-| Paddle Pop Lion | Wild or Jackpot |
-| Golden Gaytime | High |
-| Wagon Wheel | High |
-| Tim Tam | Mid |
-| Kingston | Mid |
-| Tiny Teddies | Mid-Low |
-| Scotch Finger | Low |
-| Nice Biscuit | Low |
-| Zooper Dooper | Low |
-| Dagwood Dog | Scatter |
-
-## Notes
-- User wants biscuits + ice creams combined into one theme
-- More biscuit options than ice creams — could weight 6 biscuit symbols + 4 ice cream symbols
-- Paddle Pop Lion is a strong Wild candidate (recognisable character)
-- Golden Gaytime works as the jackpot/high symbol
-- Still waiting on motorsport + MLB inspo from user before deciding final symbol tiers
-
----
-
-## Feature Mechanic — CONFIRMED: More Chilli Model
-
-**Scatter / Feature Trigger symbol: ARGO CONE** (the decorated ice cream cone)
-- 3+ Argo Cones anywhere on reels triggers "CANTEEN FRENZY" free games
-- 12 free games standard, 15 with +5 option
-
-**During Canteen Frenzy, player collects ARGO CONES to escalate the feature:**
-```
-  9 Argo Cones → 3rd reel set unlocks + reel 5 fills with GOLDEN GAYTIME WILDS
- 14 Argo Cones → 4th reel set unlocks + reels 4+5 fill with WILDS
- 30 Argo Cones → Reels 3–5 all WILD across all reel sets (maximum)
-```
-
-**GOLDEN GAYTIME = Wild symbol**
-- Substitutes all symbols except Argo Cone scatter
-- Expands to fill entire reel when it lands during free games
-- The visual climax of the game
-
-**Free games multiplier:** 3× on all wins during Canteen Frenzy
-**Retrigger:** 3+ Argo Cones during free games = extend the feature
-
-## Argo Cone Inspo
-- Classic decorated ice cream cone
-- Chocolate ice cream scoop
-- Yellow banana lollies across the middle
-- Green, red, blue jelly beans on top
-- Pink strawberry ice cream visible below
-- Flat illustration style (same as the ice cream card inspo)
+| Golden Gaytime | WILD |
+| Argo Cone | SCATTER |
+| Bubble O'Bill | High 1 |
+| Tim Tam | High 2 |
+| Iced VoVo | Mid 1 |
+| Soft-serve Cone | Mid 2 |
+| Rainbow Paddle Pop | Mid 3 |
+| Arnott's Nice | Low 1 |
+| Scotch Finger | Low 2 |
+| Tiny Teddies | Low 3 |

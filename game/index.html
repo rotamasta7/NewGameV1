@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Aussie Bites</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="machine">
+    <header id="topbar">
+      <h1>AUSSIE BITES</h1>
+      <p class="tagline">Fun credits only &middot; no real money</p>
+    </header>
+
+    <!-- Reel grid: 5 reels x 3 rows -->
+    <div id="reels" aria-label="slot reels"></div>
+
+    <!-- Win / message banner -->
+    <div id="banner">Spin to play</div>
+
+    <!-- Controls -->
+    <footer id="controls">
+      <div class="meter">
+        <span class="meter-label">CREDITS</span>
+        <span id="credits" class="meter-value">0</span>
+      </div>
+
+      <div class="bet">
+        <button id="betDown" class="chip" aria-label="decrease bet">&minus;</button>
+        <div class="meter">
+          <span class="meter-label">BET</span>
+          <span id="bet" class="meter-value">0</span>
+        </div>
+        <button id="betUp" class="chip" aria-label="increase bet">&plus;</button>
+      </div>
+
+      <button id="spin">SPIN</button>
+
+      <div class="meter">
+        <span class="meter-label">WIN</span>
+        <span id="win" class="meter-value">0</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/symbols.js"></script>
+  <script src="js/paylines.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
