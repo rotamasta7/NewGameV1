@@ -533,15 +533,15 @@ html, body {
   opacity: 0;
   /* Sticker effect — thick white outline via stacked drop-shadows */
   filter:
+    drop-shadow(0  1px 0 #fff)
+    drop-shadow(0 -1px 0 #fff)
+    drop-shadow( 1px 0 0 #fff)
+    drop-shadow(-1px 0 0 #fff)
     drop-shadow(0  2px 0 #fff)
     drop-shadow(0 -2px 0 #fff)
     drop-shadow( 2px 0 0 #fff)
     drop-shadow(-2px 0 0 #fff)
-    drop-shadow(0  3px 0 #fff)
-    drop-shadow(0 -3px 0 #fff)
-    drop-shadow( 3px 0 0 #fff)
-    drop-shadow(-3px 0 0 #fff)
-    drop-shadow(1px 2px 2px rgba(0,0,0,.22));
+    drop-shadow(1px 1px 2px rgba(0,0,0,.22));
 }
 .cell.has-img .sym-img   { opacity: 1; }
 .cell.has-img .sym-emoji { display: none; }
