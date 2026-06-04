@@ -168,7 +168,7 @@ function paintCell(cell, id, opts = {}) {
   let tag = '';
   if (s.role === 'scatter') tag = '<span class="sym-tag">BONUS</span>';
   else if (s.role === 'wild') tag = '<span class="sym-tag">WILD</span>';
-  const imgSrc = `images/${id.toLowerCase()}.png`;
+  const imgSrc = `images/${s.file || id.toLowerCase()}.png`;
   cell.innerHTML = `${tag}<img class="sym-img" src="${imgSrc}" alt="${s.label}"
     onload="this.parentElement.classList.add('has-img')"
     onerror="this.parentElement.classList.add('no-img')"><span class="sym-emoji">${s.emoji}</span>`;

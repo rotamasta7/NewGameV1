@@ -26,7 +26,7 @@ const SYMBOLS = {
 
   // ── Mid-high ──
   VOVO:     { label: 'Iced VoVo',           emoji: '🍰', color: '#e87fa6', role: 'mid',     pays: { 3: 15,  4: 50,  5: 200 } },
-  HUNDREDS: { label: 'Hundreds & Thousands', emoji: '🎊', color: '#f06292', role: 'mid',     pays: { 3: 12,  4: 35,  5: 150 } },
+  HUNDREDS: { label: 'Hundreds & Thousands', emoji: '🎊', color: '#f06292', role: 'mid',     pays: { 3: 12,  4: 35,  5: 150 }, file: '100sn1000s' },
 
   // ── Mid-low ──
   LIFESAVER: { label: 'Lifesaver',          emoji: '🍭', color: '#ff7043', role: 'mid',     pays: { 3: 8,   4: 20,  5: 80  } },
