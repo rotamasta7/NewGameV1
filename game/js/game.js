@@ -156,6 +156,7 @@ function buildPaytable() {
   }).join('');
 }
 
+
 function paintCell(cell, id, opts = {}) {
   const s = SYMBOLS[id];
   cell.style.background = opts.expand ? '' : s.color;
@@ -448,7 +449,9 @@ function doSpin({ reels, forcedWild, multiplier, free }) {
       el.reels.children[r].classList.add('spinning');
       spinners[r] = setInterval(() => {
         const w = spinReel(reels[r]);
-        for (let row = 0; row < ROWS; row++) paintCell(cells[r][row], w[row]);
+        for (let row = 0; row < ROWS; row++) {
+          cells[r][row].style.background = SYMBOLS[w[row]].color;
+        }
       }, 55);
     }
   }
