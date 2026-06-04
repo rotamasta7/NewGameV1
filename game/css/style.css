@@ -368,3 +368,31 @@ html, body {
 #machine.feature-mode {
   background: linear-gradient(180deg, #ffd27a 0%, #ff9e57 25%, #c85a2a 50%, #6e2a55 72%, #2a0f2a 88%);
 }
+
+/* ===== Last 3 Wins bar ===== */
+#lastWinsBar {
+  position: relative; z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+  padding: 4px 10px;
+  background: rgba(0,0,0,.3);
+  border-radius: 8px;
+  border: 1px solid rgba(255,207,63,.2);
+}
+.lw-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 1px;
+  color: var(--gold); opacity: .8;
+  white-space: nowrap;
+}
+.lw-val {
+  font-size: 13px; font-weight: 900;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+.lw-val.lw-empty { color: rgba(255,255,255,.3); }
+@keyframes lwPop { 0%{transform:scale(1.4);color:var(--gold)} 100%{transform:scale(1);color:#fff} }
+.lw-val.lw-new { animation: lwPop .5s ease forwards; }
+.lw-sep { font-size: 10px; color: rgba(255,255,255,.25); }

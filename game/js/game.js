@@ -49,6 +49,7 @@ const state = {
   featureWonTotal: 0,
   reachedThresholds: [],
   grid: [],                                  // grid[reel][row] = symbol id
+  lastWins: [],                              // last 3 non-zero wins
 };
 
 // ---- DOM ----
@@ -59,6 +60,7 @@ function cacheDom() {
     'banner','play','auto','autoCount','linesUp','linesDown','betUp','betDown',
     'linesLeft','linesRight','lineOverlay','collect','collectCount','collectGoal',
     'overlay','overlayCard','overlayMascot','overlayTitle','overlaySub','overlayBtn','fx',
+    'lastWins',
   ].forEach(id => el[id] = document.getElementById(id));
 }
 
@@ -188,15 +190,19 @@ function doSpin({ reels, forcedWild, multiplier, free }) {
       if (result[r][row] === SCATTER) earlyScatters++;
   const anticipate = earlyScatters >= 2;
 
-  // start all reels blurring
+  // start all reels blurring — forced-wild reels stay static golden (no spinner)
   const spinners = [];
   for (let r = 0; r < REELS; r++) {
-    const reelEl = el.reels.children[r];
-    reelEl.classList.add('spinning');
-    spinners[r] = setInterval(() => {
-      const w = spinReel(reels[r]);
-      for (let row = 0; row < ROWS; row++) paintCell(cells[r][row], w[row]);
-    }, 55);
+    if (forcedWild.includes(r)) {
+      for (let row = 0; row < ROWS; row++) paintCell(cells[r][row], WILD, { expand: true });
+      spinners[r] = null;
+    } else {
+      el.reels.children[r].classList.add('spinning');
+      spinners[r] = setInterval(() => {
+        const w = spinReel(reels[r]);
+        for (let row = 0; row < ROWS; row++) paintCell(cells[r][row], w[row]);
+      }, 55);
+    }
   }
 
   // staggered stops
@@ -207,14 +213,17 @@ function doSpin({ reels, forcedWild, multiplier, free }) {
     stopDelay = gap;
     ((reel, delay) => {
       setTimeout(() => {
-        if (anticipate && reel >= 3) el.reels.children[reel].classList.add('anticipating');
-        clearInterval(spinners[reel]);
-        el.reels.children[reel].classList.remove('spinning');
+        const isForced = forcedWild.includes(reel);
+        if (!isForced) {
+          if (anticipate && reel >= 3) el.reels.children[reel].classList.add('anticipating');
+          clearInterval(spinners[reel]);
+          el.reels.children[reel].classList.remove('spinning');
+        }
         for (let row = 0; row < ROWS; row++) {
           state.grid[reel][row] = result[reel][row];
-          paintCell(cells[reel][row], result[reel][row]);
+          paintCell(cells[reel][row], result[reel][row], isForced ? { expand: true } : {});
         }
-        if (reel >= 3) {
+        if (!isForced && reel >= 3) {
           setTimeout(() => el.reels.children[reel].classList.remove('anticipating'), 250);
         }
         if (reel === REELS - 1) {
@@ -285,6 +294,7 @@ function resolveSpin({ multiplier, free }) {
     highlightLineCells(outcome.lines);
     announceWin(win);
     coinBurst(win);
+    recordWin(win);
   } else {
     state.win = 0;
     if (state.mode === 'base') setBanner(outcome.scatterCount === 2 ? 'So close!' : 'Spin to play');
@@ -305,13 +315,13 @@ function resolveSpin({ multiplier, free }) {
   }
 
   if (state.mode === 'feature') {
-    // collect every Argo cone that landed
     const before = state.collected;
     state.collected += outcome.scatterCount;
     if (outcome.scatterCount > 0) bumpCollect();
-    checkThresholds(before);
     finishSpinFlag();
-    setTimeout(nextFreeGame, win > 0 ? 1300 : 750);
+    // checkThresholds returns true if an overlay was shown; nextFreeGame fires from onClose
+    const thresholdFired = checkThresholds(before, nextFreeGame);
+    if (!thresholdFired) setTimeout(nextFreeGame, win > 0 ? 1300 : 750);
     return;
   }
 
@@ -491,22 +501,28 @@ function nextFreeGame() {
   doSpin({ reels: REEL_FEATURE, forcedWild: state.wildReels.slice(), multiplier: FEATURE_MULTIPLIER, free: true });
 }
 
-function checkThresholds(before) {
+function checkThresholds(before, onDone) {
+  let fired = false;
   COLLECT_THRESHOLDS.forEach(t => {
     if (state.collected >= t.at && before < t.at && !state.reachedThresholds.includes(t.at)) {
       state.reachedThresholds.push(t.at);
       state.wildReels = t.wildReels.slice();
-      // brief celebration
+      fired = true;
+      // immediately paint newly-unlocked reels golden so the player sees the unlock
+      state.wildReels.forEach(r => {
+        for (let row = 0; row < ROWS; row++) paintCell(cells[r][row], WILD, { expand: true });
+      });
       showOverlay({
         mascot: '🍦',
         title: `${t.at} COLLECTED!`,
         sub: t.at >= 30 ? 'Reels 3-5 are WILD!' : `Reel${t.wildReels.length > 1 ? 's' : ''} ${t.wildReels.map(r => r + 1).join(' & ')} now WILD!`,
         button: 'KEEP GOING',
-        auto: 1600,
-        onClose: () => {},
+        auto: 2200,
+        onClose: () => { if (onDone) onDone(); },
       });
     }
   });
+  return fired;
 }
 
 function endFeature() {
@@ -539,6 +555,23 @@ function bumpCollect() {
   updateCollectUI();
   el.collect.classList.add('pop');
   setTimeout(() => el.collect.classList.remove('pop'), 400);
+}
+
+// ---- last 3 wins ----
+function recordWin(win) {
+  state.lastWins.unshift(win);
+  if (state.lastWins.length > 3) state.lastWins.pop();
+  updateLastWins();
+}
+function updateLastWins() {
+  const items = [];
+  for (let i = 0; i < 3; i++) {
+    const w = state.lastWins[i];
+    items.push(w != null
+      ? `<span class="lw-val${i === 0 ? ' lw-new' : ''}">${w.toLocaleString()}</span>`
+      : '<span class="lw-val lw-empty">—</span>');
+  }
+  el.lastWins.innerHTML = items.join('<span class="lw-sep">·</span>');
 }
 
 // ============================================================
