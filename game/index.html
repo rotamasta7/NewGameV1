@@ -7,16 +7,16 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Whole machine scales to fit the screen via JS transform -->
   <div id="stage">
     <div id="machine" class="base-mode">
 
-      <!-- ===== Top bar: logo + collect meter (meter shown in feature) ===== -->
+      <!-- ===== Top bar: logo + collect meter (shown in feature) ===== -->
       <header id="topbar">
         <div id="logo">
           <span class="logo-aussie">AUSSIE</span>
           <span class="logo-bites">BITES</span>
         </div>
+        <button id="muteBtn" title="Mute" aria-label="Mute sound">🔊</button>
         <div id="collect" aria-hidden="true">
           <span id="collectCount">0</span>
           <span class="collect-label">COLLECTED</span>
@@ -24,12 +24,11 @@
         </div>
       </header>
 
-      <!-- ===== Reel area: payline numbers | reels | payline numbers ===== -->
+      <!-- ===== Reel area ===== -->
       <div id="reelArea">
         <div class="line-col" id="linesLeft"></div>
         <div id="reelWrap">
           <div id="reels" aria-label="slot reels"></div>
-          <!-- payline + win-line overlays are drawn here -->
           <svg id="lineOverlay" viewBox="0 0 1000 600" preserveAspectRatio="none"></svg>
           <div id="freeBadge" aria-hidden="true">BONUS REELS IN PLAY</div>
         </div>
@@ -39,7 +38,14 @@
       <!-- ===== Message banner ===== -->
       <div id="banner">SPIN TO PLAY</div>
 
-      <!-- ===== Button deck (More Chilli style) ===== -->
+      <!-- ===== Gamble bar (appears after a base-game win) ===== -->
+      <div id="gambleBar" class="hidden">
+        <span id="gambleOffer">Double 0?</span>
+        <button id="gambleBtn" class="gb-btn gb-go">GAMBLE</button>
+        <button id="collectBtn" class="gb-btn gb-collect">COLLECT</button>
+      </div>
+
+      <!-- ===== Button deck ===== -->
       <footer id="deck">
         <div class="readout">
           <span class="readout-label">CREDIT</span>
@@ -86,18 +92,19 @@
         </div>
       </footer>
 
-      <p class="disclaimer">Fun credits only · no real money · for entertainment</p>
-
+      <!-- ===== Last 3 Wins ===== -->
       <div id="lastWinsBar">
         <span class="lw-label">LAST 3 WINS</span>
         <span id="lastWins">
           <span class="lw-val lw-empty">—</span><span class="lw-sep">·</span><span class="lw-val lw-empty">—</span><span class="lw-sep">·</span><span class="lw-val lw-empty">—</span>
         </span>
       </div>
+
+      <p class="disclaimer">Fun credits only · no real money · for entertainment</p>
     </div>
   </div>
 
-  <!-- ===== Full-screen celebration / pick overlays ===== -->
+  <!-- ===== Feature start / threshold overlays ===== -->
   <div id="overlay" class="hidden">
     <div id="overlayCard">
       <div id="overlayMascot">🤠</div>
@@ -107,9 +114,28 @@
     </div>
   </div>
 
-  <!-- big-win coin canvas -->
+  <!-- ===== Gamble overlay ===== -->
+  <div id="gambleOverlay" class="hidden">
+    <div id="gambleCard">
+      <div id="gamblePrompt">Pick a colour</div>
+
+      <div id="gambleChoices">
+        <button class="gamble-colour gc-red" data-colour="red">🔴&nbsp;RED</button>
+        <button class="gamble-colour gc-black" data-colour="black">⚫&nbsp;BLACK</button>
+      </div>
+
+      <div id="gambleResult" class="hidden">
+        <div id="cardFace" class="card">A♥</div>
+        <div id="gambleOutcome"></div>
+        <button id="gambleContinue" class="gb-btn gb-go">CONTINUE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- coin burst canvas -->
   <canvas id="fx" aria-hidden="true"></canvas>
 
+  <script src="js/audio.js"></script>
   <script src="js/symbols.js"></script>
   <script src="js/paylines.js"></script>
   <script src="js/game.js"></script>
