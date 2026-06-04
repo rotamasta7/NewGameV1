@@ -783,6 +783,26 @@ function onGambleContinue() {
 // ============================================================
 // Feature — Canteen Frenzy
 // ============================================================
+
+// Bill zoom-in animation shown before the feature overlay
+function showBillZoom(onDone) {
+  const zoom = document.createElement('div');
+  zoom.id = 'billZoom';
+  zoom.innerHTML = `
+    <div class="bz-bg"></div>
+    <div class="bz-rays"></div>
+    <img class="bz-bill" src="images/bill.png" alt="Bill"
+      onerror="this.outerHTML='<span class=\\"bz-bill bz-emoji\\">🤠</span>'">
+    <div class="bz-title">CANTEEN<br>FRENZY!</div>
+    <div class="bz-sub">COLLECT THE BILLS!</div>`;
+  document.body.appendChild(zoom);
+  coinBurst(9999);
+  setTimeout(() => {
+    zoom.classList.add('bz-out');
+    setTimeout(() => { zoom.remove(); if (onDone) onDone(); }, 550);
+  }, 2400);
+}
+
 function triggerFeature(scatterCount) {
   const games = FREE_GAMES_BY_SCATTER[scatterCount] || 12;
   state.mode              = 'feature';
@@ -794,17 +814,19 @@ function triggerFeature(scatterCount) {
   state.featureWonTotal   = 0;
   state.reachedThresholds = [];
   el.machine.classList.remove('base-mode');
-  el.machine.classList.add('feature-mode');
+  el.machine.classList.add('feature-mode','level-1');
   updateCollectUI();
-  showOverlay({
-    mascot: '🤠',
-    title:  'CANTEEN FRENZY!',
-    sub:    `${games} Free Games — collect Argo Cones to unlock wild reels!`,
-    button: 'START',
-    onClose: () => {
-      setBanner(`${state.freeGames} free games`);
-      nextFreeGame();
-    },
+  showBillZoom(() => {
+    showOverlay({
+      mascot: '🤠',
+      title:  'CANTEEN FRENZY!',
+      sub:    `${games} Free Games — collect Bills to unlock wild reels!`,
+      button: 'START',
+      onClose: () => {
+        setBanner(`${state.freeGames} free games`);
+        nextFreeGame();
+      },
+    });
   });
 }
 
@@ -821,13 +843,19 @@ function nextFreeGame() {
 function updateSpinCounter() {
   if (el.spinCounter) el.spinCounter.textContent =
     `SPIN ${state.freeGamesPlayed} / ${state.freeGamesTotal}  ·  ${state.freeGames} remaining`;
-  if (el.freeBadge) el.freeBadge.textContent =
-    `SPIN ${state.freeGamesPlayed} / ${state.freeGamesTotal}`;
+  // freeBadge stays as static "CANTEEN FRENZY" text set in HTML — no update here
 }
+
+const LEVEL_META = [
+  null,
+  { level: 2, mascot: '🌀', title: 'LEVEL UP!',       bg: 'purple' },
+  { level: 3, mascot: '⚡',  title: 'POWER SURGE!',    bg: 'blue'   },
+  { level: 4, mascot: '🏆', title: 'MAXIMUM POWER!',  bg: 'gold'   },
+];
 
 function checkThresholds(before, onDone) {
   let fired = false;
-  COLLECT_THRESHOLDS.forEach(t => {
+  COLLECT_THRESHOLDS.forEach((t, idx) => {
     if (state.collected >= t.at && before < t.at && !state.reachedThresholds.includes(t.at)) {
       state.reachedThresholds.push(t.at);
       state.wildReels = t.wildReels.slice();
@@ -835,15 +863,20 @@ function checkThresholds(before, onDone) {
       state.wildReels.forEach(r => {
         for (let row = 0; row < ROWS; row++) paintCell(cells[r][row], WILD, { expand: true });
       });
+      // Upgrade machine to next visual level
+      el.machine.classList.remove('level-1','level-2','level-3','level-4');
+      const lm = LEVEL_META[idx + 1] || LEVEL_META[LEVEL_META.length - 1];
+      el.machine.classList.add(`level-${lm.level}`);
       SFX.wildUnlock();
+      const wildText = t.at >= 30
+        ? 'Reels 3–5 are WILD!'
+        : `Reel${t.wildReels.length > 1 ? 's' : ''} ${t.wildReels.map(r => r + 1).join(' & ')} now WILD!`;
       showOverlay({
-        mascot: '🍦',
-        title:  `${t.at} COLLECTED!`,
-        sub:    t.at >= 30
-          ? 'Reels 3-5 are WILD!'
-          : `Reel${t.wildReels.length > 1 ? 's' : ''} ${t.wildReels.map(r => r+1).join(' & ')} now WILD!`,
+        mascot: lm.mascot,
+        title:  lm.title,
+        sub:    wildText,
         button: 'KEEP GOING',
-        auto:   2200,
+        auto:   2500,
         onClose: () => { if (onDone) onDone(); },
       });
     }
@@ -862,7 +895,7 @@ function endFeature() {
       state.mode = 'base';
       state.wildReels = [];
       if (el.spinCounter) el.spinCounter.textContent = '';
-      el.machine.classList.remove('feature-mode');
+      el.machine.classList.remove('feature-mode','level-1','level-2','level-3','level-4');
       el.machine.classList.add('base-mode');
       setBanner('Spin to play');
       render();

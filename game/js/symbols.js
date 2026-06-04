@@ -1,161 +1,168 @@
 // Aussie Bites — symbol definitions + virtual reel strips.
 //
 // Architecture: Aristocrat virtual-reel-stop model.
-//   Each reel has a linear strip of ~64 symbol IDs.
-//   On each spin, one random stop is chosen per reel.
-//   The three visible cells for reel R are: stops[i], stops[i+1], stops[i+2]
-//   (wrapping at the end). This mirrors real pokie hardware, enables stacked
-//   wilds, and makes scatter frequency precisely controllable.
+//   Each reel has a linear strip of ~62 symbol IDs.
+//   On each spin one random stop is chosen; the three visible cells are
+//   strip[stop], strip[stop+1], strip[stop+2] (wrapping). Mirrors real hardware.
 //
-// WILD    = Golden Gaytime  — stacked 3 on reels 2 & 4 for dramatic reel fills.
-// SCATTER = Argo Cone       — 3+ across any position triggers Canteen Frenzy.
+// WILD    = Golden Gaytime  — stacked ×3 on reels 3 & 5 for dramatic fills
+// SCATTER = Bubble O'Bill   — 3+ anywhere triggers Canteen Frenzy
 //
+// 15 symbols total: 1 wild + 1 scatter + 13 payline symbols
 // pays[n] = line-bet multiplier for n-of-a-kind, left-to-right.
-//            Scatter pays on TOTAL BET.
+// Scatter pays on TOTAL BET.
 
-// Paytable tuned for 94–96% total RTP (verified via tools/rtp-sim.js).
-// Values are ~1.5× the initial strip to achieve the target with the
-// virtual reel-stop model. Scatter pays on TOTAL BET.
 const SYMBOLS = {
-  GAYTIME: { label: 'Gaytime',     emoji: '🍫', color: '#e0a92e', role: 'wild',    pays: { 3: 40, 4: 150, 5: 750 } },
-  ARGO:    { label: 'Argo Cone',   emoji: '🍨', color: '#f49ac1', role: 'scatter', pays: { 3: 6,  4:  22, 5: 100 } },
-  BILL:    { label: "Bubble O'Bill", emoji: '🤠', color: '#e2703a', role: 'high',  pays: { 3: 25, 4:  90, 5: 375 } },
-  TIMTAM:  { label: 'Tim Tam',     emoji: '🍫', color: '#4a2c1a', role: 'high',   pays: { 3: 15, 4:  52, 5: 225 } },
-  VOVO:    { label: 'Iced VoVo',   emoji: '🍰', color: '#e87fa6', role: 'mid',    pays: { 3: 12, 4:  33, 5: 120 } },
-  CONE:    { label: 'Soft Serve',  emoji: '🍦', color: '#e8c887', role: 'mid',    pays: { 3:  8, 4:  22, 5:  90 } },
-  RAINBOW: { label: 'Rainbow Pop', emoji: '🌈', color: '#5bb6c4', role: 'mid',    pays: { 3:  6, 4:  18, 5:  60 } },
-  NICE:    { label: 'Nice',        emoji: '🍘', color: '#d8b878', role: 'low',    pays: { 3:  5, 4:  12, 5:  38 } },
-  SCOTCH:  { label: 'Scotch',      emoji: '🍪', color: '#c79350', role: 'low',    pays: { 3:  5, 4:  10, 5:  30 } },
-  TEDDY:   { label: 'Tiny Teddy',  emoji: '🧸', color: '#a9763f', role: 'low',    pays: { 3:  3, 4:   8, 5:  22 } },
+  // ── Wild ──
+  GAYTIME:  { label: 'Golden Gaytime',      emoji: '🍦', color: '#e0a92e', role: 'wild',    pays: { 3: 40,  4: 150, 5: 750 } },
+
+  // ── Scatter ──
+  BILL:     { label: "Bubble O'Bill",        emoji: '🤠', color: '#e2703a', role: 'scatter', pays: { 3: 6,   4: 22,  5: 100 } },
+
+  // ── High ──
+  CYCLONE:  { label: 'Cyclone',             emoji: '🌀', color: '#d32f2f', role: 'high',    pays: { 3: 30,  4: 100, 5: 400 } },
+  SPLICE:   { label: 'Splice',              emoji: '🟢', color: '#388e3c', role: 'high',    pays: { 3: 25,  4: 90,  5: 350 } },
+  TIMTAM:   { label: 'Tim Tam',             emoji: '🍫', color: '#4a2c1a', role: 'high',    pays: { 3: 20,  4: 75,  5: 280 } },
+
+  // ── Mid-high ──
+  VOVO:     { label: 'Iced VoVo',           emoji: '🍰', color: '#e87fa6', role: 'mid',     pays: { 3: 15,  4: 50,  5: 200 } },
+  HUNDREDS: { label: 'Hundreds & Thousands', emoji: '🎊', color: '#f06292', role: 'mid',     pays: { 3: 12,  4: 35,  5: 150 } },
+
+  // ── Mid-low ──
+  RAINBOW:  { label: 'Rainbow Pop',         emoji: '🌈', color: '#5bb6c4', role: 'mid',     pays: { 3: 10,  4: 25,  5: 100 } },
+  LIFESAVER: { label: 'Lifesaver',          emoji: '🍭', color: '#ff7043', role: 'mid',     pays: { 3: 8,   4: 20,  5: 80  } },
+
+  // ── Low ──
+  MAXIBON:  { label: 'Maxibon',             emoji: '🍪', color: '#5d4037', role: 'low',     pays: { 3: 6,   4: 15,  5: 55  } },
+  CONE:     { label: 'Soft Serve',          emoji: '🍦', color: '#efbe6b', role: 'low',     pays: { 3: 5,   4: 12,  5: 45  } },
+  NICE:     { label: 'Nice',                emoji: '🍘', color: '#d8b878', role: 'low',     pays: { 3: 5,   4: 10,  5: 38  } },
+  SCOTCH:   { label: 'Scotch Finger',       emoji: '🍪', color: '#c79350', role: 'low',     pays: { 3: 4,   4: 8,   5: 30  } },
+
+  // ── Very low ──
+  ICYPOLE:  { label: 'Icy Pole',            emoji: '🧊', color: '#b3e5fc', role: 'low',     pays: { 3: 3,   4: 6,   5: 22  } },
+  TEDDY:    { label: 'Tiny Teddy',          emoji: '🧸', color: '#a9763f', role: 'low',     pays: { 3: 3,   4: 5,   5: 18  } },
 };
 
-const WILD = 'GAYTIME';
-const SCATTER = 'ARGO';
+const WILD    = 'GAYTIME';
+const SCATTER = 'BILL';
 
 // ---------------------------------------------------------------
 // Virtual reel strips — BASE GAME
-// Each array is the ordered sequence of symbol IDs on that reel.
-// The visible 3-row window = strip[stop], strip[stop+1], strip[stop+2].
-//
-// Design choices:
-//  • ARGO isolated at 2 positions per reel → ~9% chance any cell shows ARGO
-//    → P(3+ scatters anywhere on 5 reels) ≈ 1 in 130 spins (authentic)
-//  • GAYTIME stacked 3-in-a-row on reels 2 & 4, solitary elsewhere →
-//    single-cell wilds help line wins; stacked wilds create visual climax
-//  • Low pays fill the bulk; high pays are rare but present
+// BILL (scatter): 2 per reel (3 on reel 3 — middle reel juicy)
+// GAYTIME: solitary on most reels, stacked ×3 on reels 3 & 5
+// High symbols rare; low fills bulk of strip
 // ---------------------------------------------------------------
 const REEL_BASE = [
-  // Reel 1 (index 0) — no stacked wilds, 2 scatters
+  // Reel 1
   [
-    'TEDDY','SCOTCH','NICE','CONE','TEDDY','RAINBOW','SCOTCH','NICE',
-    'ARGO',
-    'TEDDY','VOVO','SCOTCH','NICE','RAINBOW','TEDDY','CONE','SCOTCH',
-    'TIMTAM',
-    'NICE','TEDDY','SCOTCH','RAINBOW','NICE','VOVO','TEDDY','SCOTCH',
-    'GAYTIME',
-    'NICE','TEDDY','RAINBOW','SCOTCH','NICE','CONE','TEDDY','SCOTCH',
+    'TEDDY','SCOTCH','NICE','CONE','TEDDY','ICYPOLE','SCOTCH','NICE',
     'BILL',
-    'TEDDY','NICE','SCOTCH','RAINBOW','TEDDY','VOVO','SCOTCH','NICE',
-    'ARGO',
-    'TEDDY','SCOTCH','NICE','RAINBOW','TEDDY','CONE','SCOTCH','NICE',
+    'TEDDY','VOVO','SCOTCH','NICE','RAINBOW','TEDDY','CONE','MAXIBON',
     'TIMTAM',
-    'TEDDY','RAINBOW','SCOTCH','NICE','TEDDY','VOVO','SCOTCH','GAYTIME',
-    'NICE','TEDDY',
+    'NICE','TEDDY','ICYPOLE','RAINBOW','NICE','VOVO','TEDDY','SCOTCH',
+    'GAYTIME',
+    'NICE','TEDDY','RAINBOW','SCOTCH','NICE','LIFESAVER','TEDDY','SCOTCH',
+    'CYCLONE',
+    'TEDDY','NICE','SCOTCH','HUNDREDS','TEDDY','VOVO','SCOTCH','NICE',
+    'BILL',
+    'TEDDY','SCOTCH','NICE','RAINBOW','TEDDY','CONE','MAXIBON','NICE',
+    'TIMTAM',
+    'TEDDY','ICYPOLE','SCOTCH','NICE','TEDDY','VOVO','SCOTCH','GAYTIME',
+    'LIFESAVER','TEDDY',
   ],
 
-  // Reel 2 (index 1) — no stacked wilds, 2 scatters
+  // Reel 2
   [
-    'SCOTCH','NICE','TEDDY','RAINBOW','VOVO','SCOTCH','NICE','TEDDY',
-    'ARGO',
-    'SCOTCH','CONE','NICE','TEDDY','RAINBOW','SCOTCH','VOVO','NICE',
-    'TIMTAM',
-    'TEDDY','SCOTCH','NICE','RAINBOW','TEDDY','CONE','SCOTCH','NICE',
-    'GAYTIME',
-    'TEDDY','SCOTCH','RAINBOW','NICE','TEDDY','VOVO','SCOTCH','NICE',
+    'SCOTCH','NICE','TEDDY','RAINBOW','VOVO','MAXIBON','NICE','TEDDY',
     'BILL',
-    'TEDDY','RAINBOW','SCOTCH','NICE','TEDDY','CONE','SCOTCH','VOVO',
-    'ARGO',
-    'TEDDY','NICE','SCOTCH','RAINBOW','TEDDY','VOVO','SCOTCH','NICE',
+    'SCOTCH','CONE','NICE','TEDDY','HUNDREDS','SCOTCH','VOVO','NICE',
     'TIMTAM',
-    'TEDDY','SCOTCH','NICE','RAINBOW','TEDDY','CONE','SCOTCH',
+    'TEDDY','SCOTCH','ICYPOLE','RAINBOW','TEDDY','CONE','SCOTCH','NICE',
     'GAYTIME',
-    'NICE','TEDDY','SCOTCH',
+    'TEDDY','SCOTCH','RAINBOW','NICE','TEDDY','VOVO','LIFESAVER','NICE',
+    'SPLICE',
+    'TEDDY','RAINBOW','SCOTCH','NICE','TEDDY','MAXIBON','SCOTCH','VOVO',
+    'BILL',
+    'TEDDY','NICE','SCOTCH','RAINBOW','TEDDY','VOVO','HUNDREDS','NICE',
+    'TIMTAM',
+    'TEDDY','SCOTCH','ICYPOLE','NICE','TEDDY','CONE','SCOTCH',
+    'GAYTIME',
+    'LIFESAVER','TEDDY','SCOTCH',
   ],
 
-  // Reel 3 (index 2) — GAYTIME stacked ×3, 3 scatters (middle reel is juicy)
+  // Reel 3 — stacked wilds ×3, 3 scatters (middle reel is generous)
   [
-    'NICE','TEDDY','SCOTCH','CONE','NICE','RAINBOW','TEDDY','SCOTCH',
-    'ARGO',
-    'NICE','TEDDY','SCOTCH','VOVO','NICE','RAINBOW','TEDDY','SCOTCH',
+    'NICE','TEDDY','SCOTCH','CONE','NICE','ICYPOLE','TEDDY','SCOTCH',
+    'BILL',
+    'NICE','TEDDY','SCOTCH','VOVO','NICE','RAINBOW','TEDDY','MAXIBON',
     'GAYTIME','GAYTIME','GAYTIME',
     'NICE','TEDDY','SCOTCH','RAINBOW','NICE','CONE','TEDDY','SCOTCH',
     'TIMTAM',
-    'NICE','TEDDY','RAINBOW','SCOTCH','NICE','VOVO','TEDDY','SCOTCH',
-    'ARGO',
-    'NICE','TEDDY','SCOTCH','RAINBOW','NICE','CONE','TEDDY','SCOTCH',
-    'ARGO',
-    'NICE','TEDDY','SCOTCH','VOVO','NICE','RAINBOW','TEDDY',
-    'GAYTIME',
-    'SCOTCH','NICE','BILL','TEDDY',
-  ],
-
-  // Reel 4 (index 3) — no stacked wilds, 2 scatters
-  [
-    'RAINBOW','TEDDY','SCOTCH','NICE','VOVO','RAINBOW','TEDDY','SCOTCH',
-    'ARGO',
-    'NICE','RAINBOW','TEDDY','SCOTCH','CONE','NICE','TEDDY','RAINBOW',
-    'TIMTAM',
-    'SCOTCH','NICE','TEDDY','RAINBOW','VOVO','SCOTCH','NICE','TEDDY',
-    'GAYTIME',
-    'RAINBOW','SCOTCH','NICE','TEDDY','CONE','RAINBOW','SCOTCH','NICE',
+    'NICE','TEDDY','RAINBOW','HUNDREDS','NICE','VOVO','TEDDY','SCOTCH',
     'BILL',
-    'TEDDY','RAINBOW','SCOTCH','NICE','VOVO','TEDDY','RAINBOW','SCOTCH',
-    'ARGO',
-    'NICE','TEDDY','RAINBOW','SCOTCH','CONE','NICE','TEDDY','SCOTCH',
-    'TIMTAM',
-    'RAINBOW','NICE','TEDDY','SCOTCH','VOVO','RAINBOW',
+    'NICE','TEDDY','SCOTCH','RAINBOW','LIFESAVER','CONE','TEDDY','SCOTCH',
+    'BILL',
+    'NICE','TEDDY','ICYPOLE','VOVO','NICE','RAINBOW','TEDDY',
     'GAYTIME',
-    'NICE','TEDDY',
+    'SCOTCH','NICE','CYCLONE','TEDDY',
   ],
 
-  // Reel 5 (index 4) — GAYTIME stacked ×3, 2 scatters
+  // Reel 4
   [
-    'SCOTCH','NICE','RAINBOW','TEDDY','VOVO','SCOTCH','NICE','RAINBOW',
-    'ARGO',
-    'TEDDY','SCOTCH','NICE','CONE','RAINBOW','TEDDY','SCOTCH','NICE',
+    'RAINBOW','TEDDY','SCOTCH','NICE','VOVO','MAXIBON','TEDDY','SCOTCH',
+    'BILL',
+    'NICE','RAINBOW','TEDDY','SCOTCH','CONE','NICE','TEDDY','HUNDREDS',
+    'TIMTAM',
+    'SCOTCH','NICE','ICYPOLE','RAINBOW','VOVO','SCOTCH','NICE','TEDDY',
+    'GAYTIME',
+    'RAINBOW','SCOTCH','NICE','TEDDY','LIFESAVER','RAINBOW','SCOTCH','NICE',
+    'SPLICE',
+    'TEDDY','RAINBOW','SCOTCH','VOVO','NICE','TEDDY','MAXIBON','SCOTCH',
+    'BILL',
+    'NICE','TEDDY','RAINBOW','HUNDREDS','CONE','NICE','TEDDY','SCOTCH',
+    'TIMTAM',
+    'RAINBOW','NICE','ICYPOLE','SCOTCH','VOVO','RAINBOW',
+    'GAYTIME',
+    'LIFESAVER','TEDDY',
+  ],
+
+  // Reel 5 — stacked wilds ×3, 2 scatters
+  [
+    'SCOTCH','NICE','RAINBOW','TEDDY','VOVO','MAXIBON','NICE','RAINBOW',
+    'BILL',
+    'TEDDY','SCOTCH','NICE','CONE','RAINBOW','TEDDY','SCOTCH','HUNDREDS',
     'GAYTIME','GAYTIME','GAYTIME',
-    'RAINBOW','TEDDY','SCOTCH','VOVO','NICE','RAINBOW','TEDDY','SCOTCH',
+    'RAINBOW','TEDDY','SCOTCH','VOVO','NICE','ICYPOLE','TEDDY','SCOTCH',
     'TIMTAM',
-    'NICE','RAINBOW','TEDDY','SCOTCH','CONE','NICE','RAINBOW','TEDDY',
+    'NICE','RAINBOW','TEDDY','LIFESAVER','CONE','NICE','RAINBOW','TEDDY',
+    'CYCLONE',
+    'SCOTCH','NICE','VOVO','RAINBOW','MAXIBON','SCOTCH','NICE','RAINBOW',
     'BILL',
-    'SCOTCH','NICE','VOVO','RAINBOW','TEDDY','SCOTCH','NICE','RAINBOW',
-    'ARGO',
     'TEDDY','SCOTCH','NICE','CONE','RAINBOW','TEDDY','SCOTCH',
     'GAYTIME',
-    'NICE','RAINBOW','TEDDY','VOVO','SCOTCH',
+    'HUNDREDS','RAINBOW','TEDDY','VOVO','SCOTCH',
   ],
 ];
 
 // ---------------------------------------------------------------
 // Virtual reel strips — FEATURE (Canteen Frenzy)
-// More GAYTIME wilds, more ARGO for collection, fewer lows.
-// ARGO still at only 3 per reel to avoid retrigger cascade.
-// Forced-wild reels are applied on top in game.js.
+// More GAYTIME wilds, more BILL for collecting, fewer lows.
+// 3 BILL per reel for higher collect rate.
 // ---------------------------------------------------------------
 const REEL_FEATURE = [
   // Reel 1
   [
-    'TEDDY','SCOTCH','NICE','CONE','VOVO','SCOTCH','NICE',
-    'ARGO',
-    'TEDDY','VOVO','SCOTCH','NICE','RAINBOW','TEDDY','CONE','SCOTCH',
+    'TEDDY','SCOTCH','NICE','CONE','VOVO','MAXIBON','SCOTCH',
+    'BILL',
+    'TEDDY','VOVO','SCOTCH','NICE','RAINBOW','TEDDY','CONE','HUNDREDS',
     'GAYTIME','GAYTIME',
     'NICE','TEDDY','SCOTCH','RAINBOW','VOVO','TEDDY','SCOTCH',
-    'ARGO',
-    'TEDDY','NICE','RAINBOW','SCOTCH','CONE','TEDDY','SCOTCH',
     'BILL',
+    'TEDDY','NICE','RAINBOW','SCOTCH','LIFESAVER','TEDDY','SCOTCH',
+    'CYCLONE',
     'TEDDY','NICE','VOVO','RAINBOW','TEDDY','SCOTCH','NICE',
-    'ARGO',
-    'TEDDY','SCOTCH','NICE','RAINBOW','VOVO','CONE','SCOTCH',
+    'BILL',
+    'TEDDY','SCOTCH','NICE','HUNDREDS','VOVO','CONE','SCOTCH',
     'TIMTAM',
     'TEDDY','RAINBOW','SCOTCH','NICE','GAYTIME','VOVO','SCOTCH',
     'GAYTIME',
@@ -164,54 +171,54 @@ const REEL_FEATURE = [
 
   // Reel 2
   [
-    'SCOTCH','NICE','VOVO','RAINBOW','SCOTCH','NICE','TEDDY',
-    'ARGO',
-    'SCOTCH','CONE','NICE','TEDDY','VOVO','SCOTCH','NICE',
+    'SCOTCH','NICE','VOVO','RAINBOW','MAXIBON','SCOTCH','NICE',
+    'BILL',
+    'SCOTCH','CONE','NICE','TEDDY','VOVO','HUNDREDS','SCOTCH',
     'GAYTIME','GAYTIME',
     'TEDDY','SCOTCH','NICE','RAINBOW','VOVO','SCOTCH','NICE',
-    'ARGO',
-    'TEDDY','RAINBOW','SCOTCH','NICE','VOVO','SCOTCH','NICE',
     'BILL',
-    'TEDDY','RAINBOW','SCOTCH','CONE','TEDDY','VOVO','SCOTCH',
-    'ARGO',
-    'TEDDY','NICE','RAINBOW','SCOTCH','VOVO','SCOTCH',
+    'TEDDY','RAINBOW','SCOTCH','NICE','VOVO','LIFESAVER','SCOTCH',
+    'SPLICE',
+    'TEDDY','RAINBOW','SCOTCH','CONE','VOVO','TEDDY','SCOTCH',
+    'BILL',
+    'TEDDY','NICE','RAINBOW','SCOTCH','VOVO','HUNDREDS','SCOTCH',
     'TIMTAM',
     'TEDDY','SCOTCH','NICE','VOVO','GAYTIME','SCOTCH',
     'GAYTIME',
     'NICE','TEDDY','SCOTCH','RAINBOW',
   ],
 
-  // Reel 3 — double-stacked wilds
+  // Reel 3 — double stacked wilds
   [
-    'NICE','TEDDY','CONE','NICE','RAINBOW','SCOTCH',
-    'ARGO',
-    'NICE','TEDDY','VOVO','NICE','RAINBOW','SCOTCH',
+    'NICE','TEDDY','CONE','NICE','RAINBOW','MAXIBON',
+    'BILL',
+    'NICE','TEDDY','VOVO','NICE','HUNDREDS','SCOTCH',
     'GAYTIME','GAYTIME','GAYTIME',
-    'NICE','TEDDY','SCOTCH','RAINBOW','CONE','SCOTCH',
+    'NICE','TEDDY','SCOTCH','RAINBOW','CONE','VOVO',
     'TIMTAM',
-    'NICE','TEDDY','RAINBOW','VOVO','NICE','SCOTCH',
-    'ARGO',
-    'NICE','TEDDY','SCOTCH','RAINBOW','CONE','SCOTCH',
-    'ARGO',
+    'NICE','TEDDY','RAINBOW','VOVO','LIFESAVER','SCOTCH',
+    'BILL',
+    'NICE','TEDDY','SCOTCH','RAINBOW','CONE','HUNDREDS',
+    'BILL',
     'NICE','TEDDY','VOVO','RAINBOW','SCOTCH',
     'GAYTIME','GAYTIME',
-    'NICE','BILL','TEDDY','SCOTCH',
+    'NICE','CYCLONE','TEDDY','SCOTCH',
   ],
 
   // Reel 4
   [
-    'RAINBOW','VOVO','SCOTCH','NICE','RAINBOW','SCOTCH',
-    'ARGO',
-    'NICE','RAINBOW','VOVO','SCOTCH','CONE','NICE','RAINBOW',
+    'RAINBOW','VOVO','SCOTCH','NICE','MAXIBON','RAINBOW',
+    'BILL',
+    'NICE','RAINBOW','VOVO','HUNDREDS','CONE','NICE','RAINBOW',
     'GAYTIME','GAYTIME',
-    'SCOTCH','NICE','VOVO','RAINBOW','SCOTCH','NICE',
+    'SCOTCH','NICE','VOVO','RAINBOW','LIFESAVER','NICE',
     'TIMTAM',
     'RAINBOW','SCOTCH','NICE','VOVO','RAINBOW','SCOTCH',
-    'ARGO',
-    'NICE','RAINBOW','VOVO','SCOTCH','CONE','NICE','RAINBOW',
     'BILL',
+    'NICE','RAINBOW','VOVO','HUNDREDS','CONE','NICE','RAINBOW',
+    'SPLICE',
     'SCOTCH','NICE','RAINBOW','VOVO','SCOTCH',
-    'ARGO',
+    'BILL',
     'NICE','RAINBOW','VOVO','SCOTCH',
     'GAYTIME','GAYTIME',
     'NICE','RAINBOW',
@@ -219,18 +226,18 @@ const REEL_FEATURE = [
 
   // Reel 5 — stacked wilds
   [
-    'SCOTCH','VOVO','RAINBOW','NICE','SCOTCH','RAINBOW',
-    'ARGO',
-    'VOVO','SCOTCH','NICE','CONE','RAINBOW','SCOTCH','NICE',
+    'SCOTCH','VOVO','RAINBOW','NICE','MAXIBON','RAINBOW',
+    'BILL',
+    'VOVO','SCOTCH','NICE','CONE','HUNDREDS','SCOTCH','NICE',
     'GAYTIME','GAYTIME','GAYTIME',
-    'RAINBOW','VOVO','SCOTCH','NICE','RAINBOW','SCOTCH',
+    'RAINBOW','VOVO','SCOTCH','NICE','LIFESAVER','SCOTCH',
     'TIMTAM',
     'NICE','RAINBOW','VOVO','SCOTCH','CONE','NICE','RAINBOW',
-    'ARGO',
-    'SCOTCH','NICE','VOVO','RAINBOW','SCOTCH',
     'BILL',
+    'SCOTCH','NICE','VOVO','HUNDREDS','SCOTCH',
+    'CYCLONE',
     'NICE','RAINBOW','VOVO','SCOTCH',
-    'ARGO',
+    'BILL',
     'NICE','RAINBOW',
     'GAYTIME','GAYTIME',
     'VOVO','SCOTCH',
@@ -240,6 +247,6 @@ const REEL_FEATURE = [
 // Helper: sample a stop and return the 3-cell window (wrapping).
 function spinReel(strip) {
   const stop = (Math.random() * strip.length) | 0;
-  const len = strip.length;
+  const len  = strip.length;
   return [strip[stop], strip[(stop + 1) % len], strip[(stop + 2) % len]];
 }
