@@ -137,7 +137,7 @@ function buildGrid() {
 
 function buildPaytable() {
   if (!el.paytableTable) return;
-  const order = ['GAYTIME','ARGO','BILL','TIMTAM','VOVO','CONE','RAINBOW','NICE','SCOTCH','TEDDY'];
+  const order = Object.keys(SYMBOLS);
   el.paytableTable.innerHTML = order.map(id => {
     const s = SYMBOLS[id];
     const p = s.pays;

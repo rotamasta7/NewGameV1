@@ -257,7 +257,7 @@ html, body {
 /* ===== Banner ===== */
 #banner {
   position: relative; z-index: 2;
-  margin: 14px auto 8px;
+  margin: 8px auto 5px;
   text-align: center;
   font-size: 15px; font-weight: 800; letter-spacing: .5px;
   color: var(--gold);
@@ -272,7 +272,7 @@ html, body {
   position: relative; z-index: 2;
   background: linear-gradient(180deg, #5a130c, var(--deck));
   border-radius: 12px;
-  padding: 8px 8px 10px;
+  padding: 6px 8px 7px;
   box-shadow: inset 0 2px 0 rgba(255,255,255,.08), 0 6px 16px rgba(0,0,0,.5);
 }
 .readout {
@@ -522,17 +522,28 @@ html, body {
 .gamble-win-text  { color: var(--gold); }
 .gamble-lose-text { color: #ff5252; }
 
-/* ===== Symbol art: PNG images with emoji fallback ===== */
+/* ===== Symbol art: PNG images with sticker effect + emoji fallback ===== */
 .cell .sym-img {
   position: absolute;
-  width: 85%; height: 85%;
+  width: 80%; height: 80%;
   object-fit: contain;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0;
+  /* Sticker effect — thick white outline via stacked drop-shadows */
+  filter:
+    drop-shadow(0  2px 0 #fff)
+    drop-shadow(0 -2px 0 #fff)
+    drop-shadow( 2px 0 0 #fff)
+    drop-shadow(-2px 0 0 #fff)
+    drop-shadow(0  3px 0 #fff)
+    drop-shadow(0 -3px 0 #fff)
+    drop-shadow( 3px 0 0 #fff)
+    drop-shadow(-3px 0 0 #fff)
+    drop-shadow(1px 2px 2px rgba(0,0,0,.22));
 }
-.cell.has-img .sym-img  { opacity: 1; }
+.cell.has-img .sym-img   { opacity: 1; }
 .cell.has-img .sym-emoji { display: none; }
 /* No image: show emoji centred */
 .cell .sym-emoji { display: flex; align-items: center; justify-content: center; }
@@ -623,7 +634,7 @@ html, body {
 }
 
 /* ===== Max Bet button ===== */
-.deck-row2 { text-align: center; margin-top: 5px; }
+.deck-row2 { text-align: center; margin-top: 3px; }
 .maxbet-btn {
   border: none; cursor: pointer;
   background: linear-gradient(180deg, #ffb347, #d4571d);
