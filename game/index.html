@@ -12,6 +12,7 @@
 
       <!-- ===== Top bar: logo + collect meter (shown in feature) ===== -->
       <header id="topbar">
+        <button id="paytableBtn" title="Paytable" aria-label="View paytable">?</button>
         <div id="logo">
           <span class="logo-aussie">AUSSIE</span>
           <span class="logo-bites">BITES</span>
@@ -93,6 +94,10 @@
             <span class="round-top">PLAY</span>
           </button>
         </div>
+
+        <div class="deck-row2">
+          <button id="maxBetBtn" class="maxbet-btn">MAX BET</button>
+        </div>
       </footer>
 
       <!-- ===== Last 3 Wins ===== -->
@@ -135,12 +140,55 @@
     </div>
   </div>
 
+  <!-- ===== Paytable overlay ===== -->
+  <div id="paytableOverlay" class="hidden">
+    <div id="paytableCard">
+      <button id="paytableClose" aria-label="Close paytable">✕</button>
+      <h2 class="pt-title">PAYTABLE</h2>
+      <table id="paytableTable">
+        <thead>
+          <tr><th></th><th></th><th>×3</th><th>×4</th><th>×5</th></tr>
+        </thead>
+      </table>
+      <p class="pt-note">Line pays × bet per line · Scatter pays × total bet</p>
+    </div>
+  </div>
+
   <!-- coin burst canvas -->
   <canvas id="fx" aria-hidden="true"></canvas>
+
+  <!-- ===== Admin trigger (dev tool) ===== -->
+  <button id="adminTrigger" title="Admin">⚙</button>
+
+  <!-- ===== Admin panel ===== -->
+  <div id="adminPanel" class="hidden">
+    <div id="adminLogin">
+      <p class="adm-heading">Dev Access</p>
+      <input type="password" id="adminPwd" placeholder="password" autocomplete="off">
+      <button id="adminLoginBtn">GO</button>
+    </div>
+    <div id="adminContent" class="hidden">
+      <p class="adm-heading">ADMIN</p>
+      <div id="adminStats"></div>
+      <div id="adminActions">
+        <button data-admin-action="scatter3">Feature (3 scatter)</button>
+        <button data-admin-action="scatter4">Feature (4 scatter)</button>
+        <button data-admin-action="scatter5">Feature (5 scatter)</button>
+        <button data-admin-action="credits">+1000 Credits</button>
+        <button data-admin-action="bigwin">Big Win Screen</button>
+        <button data-admin-action="thresh1">Force Thresh 9</button>
+        <button data-admin-action="thresh2">Force Thresh 14</button>
+        <button data-admin-action="thresh3">Force Thresh 30</button>
+        <button data-admin-action="endfeature">End Feature</button>
+        <button data-admin-action="reset" class="adm-danger">Reset All</button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/audio.js"></script>
   <script src="js/symbols.js"></script>
   <script src="js/paylines.js"></script>
   <script src="js/game.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>

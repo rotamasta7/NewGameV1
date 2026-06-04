@@ -521,3 +521,215 @@ html, body {
 }
 .gamble-win-text  { color: var(--gold); }
 .gamble-lose-text { color: #ff5252; }
+
+/* ===== Symbol art: PNG images with emoji fallback ===== */
+.cell .sym-img {
+  position: absolute;
+  width: 85%; height: 85%;
+  object-fit: contain;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+}
+.cell.has-img .sym-img  { opacity: 1; }
+.cell.has-img .sym-emoji { display: none; }
+/* No image: show emoji centred */
+.cell .sym-emoji { display: flex; align-items: center; justify-content: center; }
+.cell.no-img .sym-img { display: none; }
+
+/* ===== Super anticipation (3rd scatter confirmed, final reel slowing) ===== */
+@keyframes superAnticip {
+  0%,100% { box-shadow: 0 0 30px 8px #ff4400, inset 0 0 0 3px #ff4400; }
+  50%      { box-shadow: 0 0 55px 18px #ff8800, inset 0 0 0 4px #ff8800; }
+}
+.reel.super-anticipating { animation: superAnticip .22s ease infinite; }
+
+/* ===== Paytable overlay ===== */
+#paytableOverlay {
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(0,0,0,.80);
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(3px);
+  overflow-y: auto;
+}
+#paytableOverlay.hidden { display: none; }
+#paytableCard {
+  position: relative;
+  background: linear-gradient(180deg, #2a0f2a, #1a0a08);
+  border: 3px solid var(--gold);
+  border-radius: 18px;
+  padding: 22px 20px 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.7);
+  animation: cardIn .35s cubic-bezier(.2,1.3,.4,1);
+  max-width: 90vw; width: 340px;
+  max-height: 90vh; overflow-y: auto;
+}
+#paytableClose {
+  position: absolute; top: 10px; right: 12px;
+  background: rgba(255,255,255,.12); border: none;
+  color: #fff; font-size: 16px; font-weight: 900;
+  width: 28px; height: 28px; border-radius: 50%; cursor: pointer;
+}
+.pt-title {
+  text-align: center; font-size: 22px; font-weight: 900;
+  color: var(--gold); letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0,0,0,.5);
+  margin-bottom: 12px;
+}
+#paytableTable {
+  width: 100%; border-collapse: collapse; font-size: 12px;
+}
+#paytableTable th {
+  font-size: 10px; font-weight: 800; color: var(--gold);
+  letter-spacing: .5px; padding: 3px 4px; text-align: center;
+  border-bottom: 1px solid rgba(255,207,63,.3);
+}
+#paytableTable th:nth-child(2) { text-align: left; }
+#paytableTable tr + tr td { border-top: 1px solid rgba(255,255,255,.06); }
+#paytableTable td { padding: 5px 4px; vertical-align: middle; }
+.pt-em {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 6px;
+  font-size: 22px;
+}
+.pt-name {
+  font-size: 11px; font-weight: 700; color: #fff;
+  text-align: left; padding-left: 6px; line-height: 1.3;
+}
+.pt-role {
+  display: block; font-size: 9px; font-weight: 600; margin-top: 2px;
+  opacity: .85;
+}
+.pt-wild { color: #7cff7c; }
+.pt-scat { color: #ff80ab; }
+.pt-p {
+  text-align: center; font-size: 12px; font-weight: 800;
+  color: var(--gold); font-variant-numeric: tabular-nums;
+  min-width: 30px;
+}
+.pt-note {
+  text-align: center; font-size: 9px; opacity: .6;
+  color: var(--text-cream); margin-top: 10px;
+}
+/* paytable button in topbar */
+#paytableBtn {
+  position: absolute; left: 6px; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,.35); border: 1px solid rgba(255,207,63,.3);
+  border-radius: 50%; width: 28px; height: 28px;
+  font-size: 15px; font-weight: 900; color: var(--gold);
+  cursor: pointer; z-index: 3;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ===== Max Bet button ===== */
+.deck-row2 { text-align: center; margin-top: 5px; }
+.maxbet-btn {
+  border: none; cursor: pointer;
+  background: linear-gradient(180deg, #ffb347, #d4571d);
+  color: #fff; font-size: 10px; font-weight: 900;
+  letter-spacing: 1.5px; padding: 5px 22px; border-radius: 8px;
+  box-shadow: 0 3px 0 rgba(0,0,0,.4);
+  text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+.maxbet-btn:active { transform: translateY(2px); box-shadow: 0 1px 0 rgba(0,0,0,.4); }
+
+/* ===== Big Win full-screen sequence ===== */
+#bigWinScreen {
+  position: fixed; inset: 0; z-index: 70;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.bw-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, #1a0050 0%, #000 70%);
+  opacity: .92;
+}
+.bw-content {
+  position: relative; z-index: 1;
+  text-align: center;
+  animation: bwIn .5s cubic-bezier(.2,1.4,.4,1);
+}
+@keyframes bwIn { from{transform:scale(.4);opacity:0} to{transform:scale(1);opacity:1} }
+.bw-tier {
+  font-size: 52px; font-weight: 900; letter-spacing: 3px;
+  text-shadow: 0 0 40px currentColor, 0 4px 0 rgba(0,0,0,.6);
+  animation: bwPulse 1s ease infinite;
+}
+@keyframes bwPulse { 0%,100%{filter:brightness(1)} 50%{filter:brightness(1.35)} }
+.bw-amount {
+  font-size: 64px; font-weight: 900; color: #fff;
+  text-shadow: 0 0 30px #fff8, 0 4px 0 rgba(0,0,0,.5);
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0;
+  animation: bwCount .6s cubic-bezier(.2,1.3,.4,1) .15s both;
+}
+@keyframes bwCount { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+.bw-tap {
+  font-size: 14px; font-weight: 700; color: rgba(255,255,255,.55);
+  letter-spacing: 1px; margin-top: 22px;
+  animation: bwFade 1s ease 1.5s both;
+}
+@keyframes bwFade { from{opacity:0} to{opacity:1} }
+#bigWinScreen.bw-fade { animation: bwDismiss .35s ease forwards; }
+@keyframes bwDismiss { to{opacity:0; transform:scale(1.08)} }
+
+/* ===== Admin panel ===== */
+#adminTrigger {
+  position: fixed; bottom: 8px; left: 8px; z-index: 90;
+  background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.2);
+  border-radius: 50%; width: 26px; height: 26px;
+  font-size: 13px; color: rgba(255,255,255,.5);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+#adminPanel {
+  position: fixed; left: 0; top: 0; bottom: 0; z-index: 80;
+  width: 190px;
+  background: #0d0d1a;
+  border-right: 2px solid #333;
+  overflow-y: auto;
+  padding: 10px 8px;
+  font-family: "Trebuchet MS", system-ui, sans-serif;
+  color: #ccc;
+  font-size: 12px;
+}
+#adminPanel.hidden { display: none; }
+.adm-heading {
+  font-size: 13px; font-weight: 900; color: var(--gold);
+  letter-spacing: 1px; text-align: center; margin-bottom: 8px;
+}
+#adminLogin { display: flex; flex-direction: column; gap: 6px; }
+#adminPwd {
+  background: #1a1a2e; border: 1px solid #444; color: #fff;
+  padding: 5px 8px; border-radius: 6px; font-size: 12px; width: 100%;
+}
+#adminLoginBtn {
+  background: linear-gradient(180deg,#6b7cff,#3a45c4); border: none;
+  color: #fff; font-weight: 900; font-size: 12px;
+  padding: 5px; border-radius: 6px; cursor: pointer;
+}
+#adminStats {
+  margin-bottom: 8px;
+  background: rgba(255,255,255,.04);
+  border-radius: 6px; padding: 6px 8px;
+}
+.as-row {
+  display: flex; justify-content: space-between;
+  padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: 11px;
+}
+.as-row:last-child { border-bottom: none; }
+.as-row span:first-child { color: rgba(255,255,255,.5); }
+.as-row span:last-child  { color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
+#adminActions {
+  display: flex; flex-direction: column; gap: 4px;
+}
+#adminActions button {
+  background: #1e1e3a; border: 1px solid #444; color: #ddd;
+  font-size: 11px; font-weight: 700; padding: 5px 8px;
+  border-radius: 6px; cursor: pointer; text-align: left;
+  transition: background .15s;
+}
+#adminActions button:hover  { background: #2a2a55; }
+#adminActions button:active { transform: translateY(1px); }
+#adminActions .adm-danger { color: #ff5252; border-color: #552222; }
