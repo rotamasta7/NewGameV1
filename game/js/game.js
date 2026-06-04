@@ -116,7 +116,7 @@ function paintCell(cell, id, opts = {}) {
     + (opts.expand ? ' wild-expand' : '')
     + (opts.dim    ? ' dim'         : '');
   let tag = '';
-  if (s.role === 'scatter') tag = '<span class="sym-tag">SCAT</span>';
+  if (s.role === 'scatter') tag = '<span class="sym-tag">BONUS</span>';
   else if (s.role === 'wild') tag = '<span class="sym-tag">WILD</span>';
   cell.innerHTML = `${tag}<span class="sym-emoji">${s.emoji}</span><span class="sym-label">${s.label}</span>`;
 }
