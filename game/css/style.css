@@ -123,7 +123,7 @@ html, body {
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;   /* prevents line-col height from stretching reelWrap */
   gap: 4px;
   justify-content: center;
 }
@@ -131,13 +131,15 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 4px 0;
-  gap: 2px;
+  padding: 2px 0;
+  gap: 0;
+  /* height matches 3-row reel window (3×60px cells + 2×3px gaps + 2×4px padding) */
+  height: 194px;
 }
 .line-num {
-  width: 22px; height: 18px;
-  border-radius: 9px;
-  font-size: 11px; font-weight: 800;
+  width: 20px; height: 14px;
+  border-radius: 7px;
+  font-size: 9px; font-weight: 800;
   color: #1a1a1a;
   display: flex; align-items: center; justify-content: center;
   box-shadow: inset 0 -2px 3px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.4);
@@ -227,12 +229,24 @@ html, body {
   position: absolute;
   left: 50%; bottom: -10px; transform: translateX(-50%);
   background: var(--gold); color: #5a130c;
-  font-size: 10px; font-weight: 900; letter-spacing: 1px;
-  padding: 3px 12px; border-radius: 10px;
+  font-size: 11px; font-weight: 900; letter-spacing: 1px;
+  padding: 3px 14px; border-radius: 10px;
   display: none; white-space: nowrap;
   box-shadow: 0 2px 6px rgba(0,0,0,.5);
 }
 #machine.feature-mode #freeBadge { display: block; }
+
+/* spin X/Y counter shown above reels in feature */
+#spinCounter {
+  position: relative; z-index: 3;
+  display: none;
+  text-align: center;
+  margin: 3px 0 2px;
+  font-size: 13px; font-weight: 900; letter-spacing: 1px;
+  color: var(--gold);
+  text-shadow: 0 2px 4px rgba(0,0,0,.6);
+}
+#machine.feature-mode #spinCounter { display: block; }
 
 #lineOverlay {
   position: absolute; inset: 4px;

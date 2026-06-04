@@ -42,10 +42,12 @@ const state = {
   spinning:  false,
   auto:      false,
   mode:      'base',                     // 'base' | 'feature'
-  freeGames:       0,
-  collected:       0,
-  wildReels:       [],
-  featureWonTotal: 0,
+  freeGames:        0,
+  freeGamesTotal:   0,
+  freeGamesPlayed:  0,
+  collected:        0,
+  wildReels:        [],
+  featureWonTotal:  0,
   reachedThresholds: [],
   grid:      [],
   lastWins:  [],
@@ -59,7 +61,8 @@ function cacheDom() {
   [
     'stage','machine','reels','credits','lines','betPerLine','totalBet','win',
     'banner','play','auto','autoCount','linesUp','linesDown','betUp','betDown',
-    'linesLeft','linesRight','lineOverlay','collect','collectCount','collectGoal',
+    'linesLeft','linesRight','lineOverlay','freeBadge','spinCounter',
+    'collect','collectCount','collectGoal',
     'overlay','overlayCard','overlayMascot','overlayTitle','overlaySub','overlayBtn','fx',
     'lastWins',
     'gambleBar','gambleOffer','gambleBtn','collectBtn',
@@ -286,6 +289,7 @@ function doSpin({ reels, forcedWild, multiplier, free }) {
   }
 
   let anticipatePlayed = false;
+  let scatterLandCount = 0;   // track bonus tile landings for escalating sound
   let stopDelay = 0;
   for (let r = 0; r < REELS; r++) {
     let gap = 360 + r * 200;
@@ -303,7 +307,7 @@ function doSpin({ reels, forcedWild, multiplier, free }) {
           el.reels.children[reel].classList.remove('spinning');
         }
 
-        // snap animation on landing
+        // snap + clunk on landing
         if (!isForced) {
           el.reels.children[reel].classList.add('snap');
           setTimeout(() => el.reels.children[reel].classList.remove('snap'), 200);
@@ -313,6 +317,12 @@ function doSpin({ reels, forcedWild, multiplier, free }) {
         for (let row = 0; row < ROWS; row++) {
           state.grid[reel][row] = result[reel][row];
           paintCell(cells[reel][row], result[reel][row], isForced ? { expand: true } : {});
+        }
+
+        // escalating bonus sound as each scatter lands
+        if (!isForced && result[reel].some(s => s === SCATTER)) {
+          scatterLandCount++;
+          SFX.scatterLand(scatterLandCount);
         }
 
         if (!isForced && reel >= 3)
@@ -403,7 +413,8 @@ function resolveSpin({ multiplier, free }) {
       setTimeout(() => triggerFeature(outcome.scatterCount), 700);
       return;
     } else {
-      state.freeGames += RETRIGGER_GAMES;
+      state.freeGames      += RETRIGGER_GAMES;
+      state.freeGamesTotal += RETRIGGER_GAMES;
       flashBanner(`Retrigger! +${RETRIGGER_GAMES} free games`);
     }
   }
@@ -588,11 +599,13 @@ function onGambleContinue() {
 // ============================================================
 function triggerFeature(scatterCount) {
   const games = FREE_GAMES_BY_SCATTER[scatterCount] || 12;
-  state.mode           = 'feature';
-  state.freeGames      = games;
-  state.collected      = 0;
-  state.wildReels      = [];
-  state.featureWonTotal= 0;
+  state.mode             = 'feature';
+  state.freeGames        = games;
+  state.freeGamesTotal   = games;
+  state.freeGamesPlayed  = 0;
+  state.collected        = 0;
+  state.wildReels        = [];
+  state.featureWonTotal  = 0;
   state.reachedThresholds = [];
   el.machine.classList.remove('base-mode');
   el.machine.classList.add('feature-mode');
@@ -612,9 +625,16 @@ function triggerFeature(scatterCount) {
 function nextFreeGame() {
   if (state.freeGames <= 0) { endFeature(); return; }
   state.freeGames--;
-  setBanner(`${state.freeGames + 1} free games left · ${state.featureWonTotal.toLocaleString()} won`);
+  state.freeGamesPlayed++;
+  updateSpinCounter();
+  setBanner(`${state.featureWonTotal.toLocaleString()} won`);
   SFX.spin();
   doSpin({ reels: REEL_FEATURE, forcedWild: state.wildReels.slice(), multiplier: FEATURE_MULTIPLIER, free: true });
+}
+
+function updateSpinCounter() {
+  el.spinCounter.textContent = `SPIN ${state.freeGamesPlayed} / ${state.freeGamesTotal}  ·  ${state.freeGames} remaining`;
+  el.freeBadge.textContent   = `SPIN ${state.freeGamesPlayed} / ${state.freeGamesTotal}`;
 }
 
 function checkThresholds(before, onDone) {
